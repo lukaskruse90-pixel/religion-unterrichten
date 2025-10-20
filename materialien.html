@@ -1,63 +1,105 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Materialien – Religionsunterricht</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fachdidaktik – Religionsunterricht</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Materialien</h1>
-    <p>Arbeitsblätter und Ideen für den Unterricht</p>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrappit">
+      <a href="index.html"><img class="logo" src="bilder/logo.png" alt="Logo Religionsunterricht"></a>
+      <a class="burger" href="#">MENU</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Startseite</a>
-    <a href="materialien.html">Materialien</a>
-    <a href="ideen.html">Ideen</a>
-    <a href="kontakt.html">Kontakt</a>
+  <!-- MAIN NAV -->
+  <nav class="mainnav">
+    <div class="wrappit">
+      <a href="index.html">Startseite</a>
+      <a href="materialien.html">Materialien</a>
+      <a href="ideen.html">Ideen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
   </nav>
 
-  <main>
-    <section>
-      <h2>Biblische Themen</h2>
-      <ul>
-        <li><a href="#">Abraham und Sara</a></li>
-        <li><a href="#">Die zehn Gebote</a></li>
-        <li><a href="#">Das Gleichnis vom verlorenen Sohn</a></li>
-      </ul>
+  <!-- HERO / HEADLINE -->
+  <section class="kv-outer">
+    <div class="headline-inner">
+      <div class="headline">
+        <h1>Fachdidaktik</h1>
+        <p>Methoden, Konzepte und Praxismaterialien für den Religionsunterricht</p>
+      </div>
+      <img class="headline-ill" src="bilder/fachdidaktik-illustration.png" alt="Illustration Fachdidaktik" />
+    </div>
+  </section>
 
-      <h2>Feiertage & Feste</h2>
-      <ul>
-        <li><a href="#">Advent und Weihnachten</a></li>
-        <li><a href="#">Ostern</a></li>
-        <li><a href="#">Pfingsten</a></li>
-      </ul>
-    </section>
+  <!-- MAIN CONTENT AREA -->
+  <main class="main">
+    <div class="content-wrap">
 
-    <section>
-  <h2>Materialien zum Thema Schöpfung</h2>
-  <p>
-    <a href="pdfs/Arbeitsblatt-Schöpfung.pdf" target="_blank">
-      📘 Arbeitsblatt „Schöpfung“ (PDF)
-    </a>
-  </p>
-</section>
+      <!-- SIDEBAR: Linkliste -->
+      <aside class="sidebar" aria-label="Unterthemen">
+        <h3>Unterthemen</h3>
+        <ul>
+          <li><a href="fachdidaktik/abitur.html">Abitur</a></li>
+          <li><a href="fachdidaktik/aktualisierung.html">Aktualisierung</a></li>
+          <li><a href="fachdidaktik/differenzierung.html">Differenzierung</a></li>
+          <li><a href="fachdidaktik/inklusion.html">Inklusion</a></li>
+          <li><a href="fachdidaktik/unterrichtseinheiten.html">Unterrichtseinheiten planen</a></li>
+          <li><a href="fachdidaktik/medien.html">Medien</a></li>
+          <li><a href="fachdidaktik/ideen.html">Weitere Ideen</a></li>
+        </ul>
+      </aside>
 
-    <section>
-  <h2>Word-Dateien</h2>
-  <p>
-    <a href="docs/Arbeitsblatt-Gebet.docx" download>
-      📄 Arbeitsblatt „Gebet“ (Word)
-    </a>
-  </p>
-</section>
+      <!-- ARTICLE / MAIN -->
+      <article class="article">
+        <h2>Einführung zur Fachdidaktik</h2>
+        <p>
+          Fachdidaktik im Religionsunterricht beschäftigt sich mit Zielen, Methoden und Materialien,
+          die Schülerinnen und Schüler zum Nachdenken anregen. Auf dieser Seite findest du kompakte
+          Hinweise, weiterführende Links und praktische Arbeitsblätter.
+        </p>
 
+        <h3>Horizontale Gliederung</h3>
+        <p>
+          Du kannst hier thematisch gegliederte Arbeitsblätter ablegen (z. B. zu Schöpfung, Ethik,
+          Feierlichkeiten) oder didaktische Hinweise zur Differenzierung und Inklusion.
+        </p>
+
+        <h3>Downloads</h3>
+        <ul>
+          <li><a href="pdfs/Arbeitsblatt-Schöpfung.pdf" target="_blank">Arbeitsblatt: Schöpfung (PDF)</a></li>
+          <li><a href="pdfs/Unterrichtsplanung-Beispiel.pdf" target="_blank">Unterrichtsplanung - Beispiel (PDF)</a></li>
+        </ul>
+
+        <p style="margin-top:20px; color:var(--muted); font-size:0.95em;">
+          Tipp: Wenn Du eigene Materialien hochlädst, lege sie in Ordnern wie <code>pdfs/</code> oder <code>bilder/</code>.
+        </p>
+      </article>
+
+    </div>
   </main>
 
-  <footer>
-    &copy; 2025 Religionsunterricht
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrappit">
+      <div>
+        <img src="bilder/logo-footer.png" alt="Logo" style="height:48px;">
+      </div>
+      <div style="flex:1; padding-left:18px;">
+        <h4>Kontakt</h4>
+        <p>info@religionsunterricht.de</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
