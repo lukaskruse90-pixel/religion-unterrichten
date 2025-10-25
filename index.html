@@ -1,149 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Religionsunterricht</title>
-  <style>
-    /* Grunddesign */
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f6f1;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Kopfbereich mit Bild */
-    header {
-      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 5px #000;
-    }
-    header p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 4px #000;
-    }
-
-    /* Navigationsleiste */
-    nav {
-      background-color: #3c6e71;
-      text-align: center;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 15px;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hauptinhalt */
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #284b63;
-      border-bottom: 2px solid #e0c097;
-      padding-bottom: 5px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #3c6e71;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-
-    /* Für Handys */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-      main {
-        padding: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religion unterrichten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Religionsunterricht</h1>
-    <p>Materialien, Ideen und Inspiration für den Religionsunterricht</p>
-  </header>
+    <header>
+        Religion unterrichten
+    </header>
 
-  <nav>
-    <a href="home">Startseite</a>
-    <a href="materialien">Materialien</a>
-    <a href="ideen">Ideen</a>
-    <a href="kontakt">Kontakt</a>
-  </nav>
+    <nav>
+        <ul>
+            <li><a href="#">Startseite</a></li>
+            <li><a href="#">Fachdidaktik</a></li>
+            <li><a href="#">Unterricht</a></li>
+        </ul>
+    </nav>
 
-  <main>
-    <section id="home">
-      <h2>Willkommen!</h2>
-      <p>
-        Herzlich willkommen auf meiner Seite für den Religionsunterricht!  
-        Hier findest du Unterrichtsmaterialien, kreative Ideen und Tipps 
-        rund um den Religionsunterricht in Schule und Gemeinde.
-      </p>
-    </section>
+    <main>
+        <h1>Willkommen!</h1>
+        <p>Hier kannst du Unterrichtsmaterialien und fachdidaktische Inhalte hochladen und teilen.</p>
 
-    <section id="materialien">
-      <h2>Materialien</h2>
-      <ul>
-        <li>Arbeitsblätter zu biblischen Themen</li>
-        <li>Impulse für den Ethik- und Werteunterricht</li>
-        <li>Projektideen für Feiertage und Feste</li>
-      </ul>
-    </section>
+        <section class="materialien">
+            <h2>Unterrichtsmaterialien</h2>
+            <div class="material">
+                <h3>Beispielmaterial 1</h3>
+                <p>Kurze Beschreibung des Materials.</p>
+                <a href="#">Download</a>
+            </div>
+            <div class="material">
+                <h3>Beispielmaterial 2</h3>
+                <p>Kurze Beschreibung des Materials.</p>
+                <a href="#">Download</a>
+            </div>
+        </section>
+    </main>
 
-    <section id="ideen">
-      <h2>Ideen & Anregungen</h2>
-      <p>
-        Ob Advent, Ostern oder Themen wie „Schöpfung“ oder „Nächstenliebe“ – hier 
-        findest du inspirierende Anregungen für kreative und tiefgehende Stunden.
-      </p>
-    </section>
-
-    <section id="kontakt">
-      <h2>Kontakt</h2>
-      <p>
-        Hast du eigene Ideen oder möchtest Material teilen?  
-        Schreib mir an <a href="mailto:info@religionsunterricht.de">info@religionsunterricht.de</a>.
-      </p>
-    </section>
-
-     <section>
-      <h2>Biblische Symbole</h2>
-      <img src="bilder/kreuz.jpg" alt="Kreuz" style="max-width:100%; border-radius:12px;">
-      <p>Das Kreuz ist eines der wichtigsten Symbole im Christentum.</p>
-    </section>
-    
-  </main>
-
-  <footer>
-    &copy; 2025 Religionsunterricht | Eine Initiative für Lehrkräfte
-  </footer>
+    <footer>
+        &copy; 2025 Religion unterrichten
+    </footer>
 </body>
+</html>
+
 </html>
