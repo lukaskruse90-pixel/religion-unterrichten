@@ -16,11 +16,10 @@ header {
 }
 
 header .logo {
-    text-decoration: none; /* Unterstreichung entfernen */
+    text-decoration: none;
     font-size: 1.6rem;
     font-weight: 500;
-    color: #333; /* dezent */
-    display: inline-block;
+    color: #333;
 }
 
 /* Navigation */
@@ -34,7 +33,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* zentriert */
+    justify-content: center;
 }
 
 nav ul li {
@@ -68,6 +67,9 @@ main {
 }
 
 .material {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     background-color: #ffffff;
     padding: 25px;
     margin-bottom: 25px;
@@ -80,11 +82,16 @@ main {
     transform: translateY(-3px);
 }
 
-.material h3 {
-    margin-top: 0;
-    font-weight: 600;
+.material-text {
+    max-width: 65%;
 }
 
+.material img.preview {
+    max-width: 30%;
+    border-radius: 6px;
+}
+
+/* Links */
 .material a {
     display: inline-block;
     margin-top: 12px;
