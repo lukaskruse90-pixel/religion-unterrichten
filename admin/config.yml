@@ -1,5 +1,8 @@
 backend:
-  name: git-gateway
+  name: auth0
+  auth0_domain: "dev-ourgvx80wfgifw08.eu.auth0.com"
+  auth0_client_id: "qDKwTb7eCqxHnaWNMkWBEz7hw5PQmrKz"
+  auth0_callback_url: "https://religion-unterrichten.onrender.com/admin/"
   branch: main
 
 media_folder: "bilder/uploads"
