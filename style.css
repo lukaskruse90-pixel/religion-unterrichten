@@ -5,13 +5,13 @@ body {
     padding: 0;
     background-color: #fafafa;
     color: #222;
-    line-height: 1.6;
+    line-height: 1.7; /* etwas größer für bessere Lesbarkeit */
 }
 
 /* Header */
 header {
     background-color: #ffffff;
-    padding: 20px 40px;
+    padding: 22px 40px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -34,10 +34,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-}
-
-nav ul li {
-    margin: 0;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -56,50 +53,54 @@ nav ul li a:hover {
 
 /* Main-Bereich */
 main {
-    padding: 50px 20px;
+    padding: 60px 20px;
     max-width: 900px;
     margin: auto;
 }
 
 /* Kategorie-Überschriften */
 .kategorie h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 600;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 25px;
     color: #222;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 8px;
 }
 
 /* Unterrichtsmaterialien */
-.materialien {
-    margin-top: 40px;
-}
-
 .material {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     background-color: #ffffff;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    padding: 28px;
+    margin-bottom: 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .material:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 16px rgba(0,0,0,0.06);
 }
 
 .material-text {
     max-width: 65%;
 }
 
+.material-text p {
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Vorschau-Bild */
 .material img.preview {
     max-width: 30%;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 /* Links */
@@ -118,14 +119,15 @@ main {
 /* Footer */
 footer {
     text-align: center;
-    padding: 25px;
+    padding: 35px;
     background-color: #ffffff;
     color: #555;
     border-top: 1px solid #e0e0e0;
-    margin-top: 50px;
+    margin-top: 60px;
+    font-size: 0.95rem;
 }
 
-/* Responsive Design für mobile Geräte */
+/* Responsive Design */
 @media (max-width: 700px) {
     .material {
         flex-direction: column;
@@ -137,10 +139,10 @@ footer {
 
     .material img.preview {
         max-width: 100%;
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     main {
-        padding: 30px 15px;
+        padding: 40px 15px;
     }
 }
