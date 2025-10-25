@@ -14,12 +14,13 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 220px;
+    width: 200px;
     background-color: #ffffff;
     border-right: 1px solid #e0e0e0;
-    padding-top: 120px; /* Platz für Header */
+    padding-top: 100px; /* Platz für Header + Nav */
     padding-left: 20px;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+    z-index: 10;
 }
 
 .sidebar nav ul {
@@ -48,6 +49,8 @@ header {
     background-color: #ffffff;
     padding: 22px 40px;
     border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    z-index: 20;
 }
 
 header .logo {
@@ -61,6 +64,8 @@ header .logo {
 nav {
     background-color: #ffffff;
     border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    z-index: 20;
 }
 
 nav ul {
@@ -88,7 +93,7 @@ nav ul li a:hover {
 
 /* Main-Bereich */
 main {
-    margin-left: 260px; /* Platz für Sidebar */
+    margin-left: 220px; /* Platz für Sidebar */
     padding: 60px 40px;
     max-width: 900px;
 }
