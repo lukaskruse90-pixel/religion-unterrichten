@@ -1,153 +1,92 @@
-/* style.css - Layout im "Fachdidaktik"-Stil (vereinfacht) */
-
-/* --- Grund --- */
-:root{
-  --accent:#284b63;
-  --accent-2:#e0c097;
-  --muted:#6b6b6b;
-  --bg:#f8f6f1;
-  --white:#ffffff;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:var(--bg);
-  color:#222;
-  line-height:1.5;
+/* Grundlegende Einstellungen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* --- Header / Logo / Nav --- */
-.header{
-  background:var(--white);
-  border-bottom:1px solid #e8e8e8;
-}
-.header .wrappit{
-  max-width:1100px;
-  margin:0 auto;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  justify-content:space-between;
-}
-.logo{
-  height:54px;
-  object-fit:contain;
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
 }
 
-/* mobile burger (non-functional simple style for now) */
-.burger{ display:none; text-decoration:none; color:var(--accent); font-weight:700;}
-nav.mainnav{
-  background:var(--accent);
-  color:white;
-}
-nav.mainnav .wrappit{
-  max-width:1100px;
-  margin:0 auto;
-  padding:8px 18px;
-}
-nav.mainnav a{
-  color:white;
-  text-decoration:none;
-  margin-right:16px;
-  font-weight:600;
-}
-nav.mainnav a:hover{ text-decoration:underline; }
-
-/* --- Hero / Headline --- */
-.kv-outer{
-  background: linear-gradient(0deg, rgba(0,0,0,0.18), rgba(0,0,0,0.08)), url('bilder/fachdidaktik-hero.jpg') center/cover no-repeat;
-  color:white;
-  padding:42px 0;
-}
-.kv-outer .headline-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:38px 18px;
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-.headline h1{
-  margin:0 0 8px 0;
-  font-size:32px;
-  text-shadow:0 2px 8px rgba(0,0,0,0.45);
-}
-.headline img.headline-ill{
-  width:160px;
-  height:auto;
-  border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.35);
+/* Navigation */
+nav {
+    background-color: #333;
 }
 
-/* --- Hauptbereich: zweispaltiges Layout --- */
-.main{
-  max-width:1100px;
-  margin:22px auto;
-  padding:0 18px 40px;
-}
-.content-wrap{
-  display:grid;
-  grid-template-columns: 320px 1fr;
-  gap:28px;
-  align-items:start;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* linke Spalte (Links / Navigation intern) */
-.sidebar{
-  background:var(--white);
-  padding:18px;
-  border-radius:8px;
-  border:1px solid #e8e8e8;
+nav ul li {
+    margin: 0;
 }
-.sidebar h3{
-  margin:0 0 10px 0;
-  font-size:18px;
-  color:var(--accent);
-}
-.sidebar ul{ list-style:none; padding:0; margin:0; }
-.sidebar li{ margin:8px 0; }
-.sidebar a{
-  color:var(--accent);
-  text-decoration:none;
-}
-.sidebar a:hover{ text-decoration:underline; }
 
-/* rechte Spalte (Inhalt) */
-.article{
-  background:var(--white);
-  padding:22px;
-  border-radius:8px;
-  border:1px solid #e8e8e8;
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
 }
-.article h2{
-  margin-top:0;
-  color:var(--accent);
-  border-bottom:3px solid var(--accent-2);
-  padding-bottom:8px;
+
+nav ul li a:hover {
+    background-color: #575757;
 }
-.article p, .article li{ color:#333; }
+
+/* Main-Bereich */
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Unterrichtsmaterialien */
+.materialien {
+    margin-top: 30px;
+}
+
+.material {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.material h3 {
+    margin-top: 0;
+}
+
+.material a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.material a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
-.footer{
-  background:#f0efe9;
-  padding:28px 18px;
-  margin-top:36px;
-  border-top:1px solid #e8e8e8;
-}
-.footer .wrappit{ max-width:1100px; margin:0 auto; display:flex; gap:20px; flex-wrap:wrap; }
-
-/* Responsive */
-@media (max-width:900px){
-  .content-wrap{ grid-template-columns: 1fr; }
-  .sidebar{ order:2; }
-  .article{ order:1; }
-  .headline img.headline-ill{ display:none; }
-}
-@media (max-width:600px){
-  .header .wrappit{ padding:12px; }
-  .kv-outer .headline-inner{ padding:22px; }
-  .headline h1{ font-size:22px; }
-  nav.mainnav .wrappit{ padding:10px; }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
 }
