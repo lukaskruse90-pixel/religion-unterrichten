@@ -1,25 +1,27 @@
 /* Grundlegende Einstellungen */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f5f5f5;
+    color: #222;
 }
 
 /* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ffffff;
+    color: #222;
     padding: 20px 0;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
+    border-bottom: 1px solid #ddd;
 }
 
 /* Navigation */
 nav {
-    background-color: #333;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
 }
 
 nav ul {
@@ -37,19 +39,20 @@ nav ul li {
 nav ul li a {
     display: block;
     padding: 14px 20px;
-    color: white;
+    color: #555;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #575757;
+    color: #000;
+    border-bottom: 2px solid #000;
 }
 
 /* Main-Bereich */
 main {
     padding: 40px 20px;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -59,11 +62,11 @@ main {
 }
 
 .material {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 .material h3 {
@@ -74,8 +77,8 @@ main {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
-    color: #4CAF50;
-    font-weight: bold;
+    color: #1a73e8;
+    font-weight: 500;
 }
 
 .material a:hover {
@@ -86,7 +89,8 @@ main {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
+    color: #555;
+    border-top: 1px solid #ddd;
     margin-top: 40px;
 }
