@@ -8,42 +8,6 @@ body {
     line-height: 1.7;
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: #ffffff;
-    border-right: 1px solid #e0e0e0;
-    padding-top: 100px; /* Platz für Header + Nav */
-    padding-left: 20px;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
-    z-index: 10;
-}
-
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 14px;
-}
-
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.sidebar nav ul li a:hover {
-    color: #000;
-}
-
 /* Header */
 header {
     background-color: #ffffff;
@@ -91,6 +55,41 @@ nav ul li a:hover {
     border-bottom: 2px solid #000;
 }
 
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    display: block;
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding-top: 120px; /* Platz für Header + Nav */
+    padding-left: 20px;
+    z-index: 10;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #000;
+}
+
 /* Main-Bereich */
 main {
     margin-left: 220px; /* Platz für Sidebar */
@@ -119,12 +118,6 @@ main {
     margin-bottom: 35px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.04);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.material:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 16px rgba(0,0,0,0.06);
 }
 
 .material-text {
@@ -136,7 +129,6 @@ main {
     color: #444;
 }
 
-/* Vorschau-Bild */
 .material img.preview {
     max-width: 30%;
     border-radius: 8px;
@@ -172,25 +164,18 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 900px) {
     .sidebar {
         display: none;
     }
-
     main {
         margin-left: 0;
         padding: 40px 15px;
     }
-
     .material {
         flex-direction: column;
     }
-
-    .material-text {
-        max-width: 100%;
-    }
-
     .material img.preview {
         max-width: 100%;
         margin-top: 20px;
