@@ -11,25 +11,21 @@ collections:
     files:
       - file: "index.html"
         label: "Startseite"
-        name: "index"
+        name: "start"
         fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Inhalt", name: "body", widget: "markdown"}
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+
       - file: "materialien.html"
         label: "Materialien"
         name: "materialien"
         fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Inhalt", name: "body", widget: "markdown"}
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhalt", name: "body", widget: "markdown" }
+
       - file: "ideen.html"
         label: "Ideen"
         name: "ideen"
         fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Inhalt", name: "body", widget: "markdown"}
-      - file: "kontakt.html"
-        label: "Kontakt"
-        name: "kontakt"
-        fields:
-          - {label: "Titel", name: "title", widget: "string"}
-          - {label: "Inhalt", name: "body", widget: "markdown"}
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Inhalt", name: "body", widget: "markdown" }
