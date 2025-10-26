@@ -166,3 +166,24 @@ html {
         margin-top: 15px;
     }
 }
+
+/* Logo mit Unterzeile */
+.logo {
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.logo-main {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo-sub {
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #666;
+    margin-left: 2px;
+}
