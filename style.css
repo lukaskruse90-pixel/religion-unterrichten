@@ -77,6 +77,57 @@ main {
     margin: auto;
 }
 
+/* Überblicksseite */
+.overview-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.overview-column {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.overview-column h2 {
+    margin-top: 0;
+    color: #1a73e8;
+    font-size: 1.3rem;
+}
+
+.overview-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.overview-column ul li {
+    margin-bottom: 10px;
+}
+
+.overview-column a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.overview-column a:hover {
+    color: #1a73e8;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .overview-grid {
+        flex-direction: column;
+    }
+}
+
 /* Kategorie-Überschriften */
 .kategorie h2 {
     font-size: 1.35rem;
