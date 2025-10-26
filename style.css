@@ -127,34 +127,45 @@ main {
     object-fit: cover;
 }
 
-/* Download-Links mit Icons */
+/* Download-Links mit Farben und Text */
 .material-links {
     margin-top: 12px;
     display: flex;
-    gap: 12px;
+    gap: 8px;
 }
 
 .material-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
+    width: 50px;
     height: 36px;
-    background-color: #f0f0f0;
     border-radius: 6px;
     text-decoration: none;
-    color: #1a73e8;
-    transition: background-color 0.2s, transform 0.2s;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* PDF-Button */
+.material-links a.pdf {
+    background-color: #e74c3c; /* Rot */
+}
+
+/* DOCX-Button */
+.material-links a.doc {
+    background-color: #3498db; /* Blau */
+}
+
+/* PPP-Button */
+.material-links a.ppp {
+    background-color: #f39c12; /* Orange */
 }
 
 .material-links a:hover {
-    background-color: #e0e0e0;
     transform: translateY(-2px);
-}
-
-.material-links svg {
-    width: 20px;
-    height: 20px;
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -197,5 +208,9 @@ html {
     .material img.preview {
         max-width: 100%;
         margin-top: 15px;
+    }
+
+    .material-links {
+        justify-content: flex-start;
     }
 }
