@@ -30,14 +30,16 @@ header .logo {
 }
 
 .logo-sub {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-style: italic;
     font-weight: 400;
-    color: #777; /* oder #4a6fa5 für bläulichen Akzent */
+    color: #777;
     display: block;
-    text-align: right; /* rechtsbündig unter dem Hauptwort */
-    margin-top: 2px;   /* sehr kleiner vertikaler Abstand */
-    letter-spacing: 0.3px;
+    text-align: right;
+    margin-top: 0;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    transform: translateY(-2px);
 }
 
 /* Navigation */
