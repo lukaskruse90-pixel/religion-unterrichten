@@ -20,21 +20,24 @@ header .logo {
     text-decoration: none;
     color: #333;
     display: inline-block;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .logo-main {
     font-size: 1.5rem;
     font-weight: 600;
+    display: block;
 }
 
 .logo-sub {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-style: italic;
     font-weight: 400;
-    color: #777; /* oder #4a6fa5, wenn du den bläulichen Akzent möchtest */
-    margin-left: 2px;
-    letter-spacing: 0.5px;
+    color: #777; /* oder #4a6fa5 für bläulichen Akzent */
+    display: block;
+    text-align: right; /* rechtsbündig unter dem Hauptwort */
+    margin-top: 2px;   /* sehr kleiner vertikaler Abstand */
+    letter-spacing: 0.3px;
 }
 
 /* Navigation */
