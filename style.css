@@ -15,12 +15,26 @@ header {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Logo mit Unterzeile */
 header .logo {
-    display: inline-block;
     text-decoration: none;
+    color: #333;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.logo-main {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #333;
+}
+
+.logo-sub {
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #777; /* oder #4a6fa5, wenn du den bläulichen Akzent möchtest */
+    margin-left: 2px;
+    letter-spacing: 0.5px;
 }
 
 /* Navigation */
@@ -165,25 +179,4 @@ html {
         max-width: 100%;
         margin-top: 15px;
     }
-}
-
-/* Logo mit Unterzeile */
-.logo {
-    text-decoration: none;
-    color: #333;
-    display: inline-block;
-    line-height: 1.2;
-}
-
-.logo-main {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.logo-sub {
-    font-size: 0.95rem;
-    font-style: italic;
-    font-weight: 400;
-    color: #666;
-    margin-left: 2px;
 }
