@@ -25,7 +25,7 @@ header .logo {
     font-size: 1.5rem;
     font-weight: 600;
     display: block;
-    line-height: 1; /* sehr enger Zeilenabstand */
+    line-height: 1;
     margin: 0;
 }
 
@@ -35,9 +35,9 @@ header .logo {
     font-weight: 400;
     color: #777;
     display: block;
-    text-align: right; /* bündig am Ende von „Religionsunterricht“ */
-    line-height: 1;    /* sehr kompakt */
-    margin: 0;         /* kein zusätzlicher Abstand */
+    text-align: right;
+    line-height: 1;
+    margin: 0;
 }
 
 /* Navigation */
@@ -127,37 +127,34 @@ main {
     object-fit: cover;
 }
 
-/* Downloadlinks */
+/* Download-Links mit Icons */
 .material-links {
     margin-top: 12px;
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
-.download {
-    display: inline-flex;
+.material-links a {
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    background-color: #f0f0f0;
     border-radius: 6px;
-    color: #fff;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: #1a73e8;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
-.download.pdf { background-color: #e74c3c; }   /* rot für PDF */
-.download.doc { background-color: #3498db; }   /* blau für DOC */
-.download.ppp { background-color: #f39c12; }   /* orange für PPP */
-
-.download:hover {
+.material-links a:hover {
+    background-color: #e0e0e0;
     transform: translateY(-2px);
-    opacity: 0.85;
 }
 
-.download svg {
-    width: 16px;
-    height: 16px;
-    fill: #fff;
+.material-links svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Footer */
