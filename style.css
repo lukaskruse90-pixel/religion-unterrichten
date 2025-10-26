@@ -128,17 +128,36 @@ main {
 }
 
 /* Downloadlinks */
-.material a {
-    display: inline-block;
+.material-links {
     margin-top: 12px;
-    margin-right: 12px;
-    text-decoration: none;
-    color: #1a73e8;
-    font-weight: 500;
+    display: flex;
+    gap: 10px;
 }
 
-.material a:hover {
-    text-decoration: underline;
+.download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download.pdf { background-color: #e74c3c; }   /* rot für PDF */
+.download.doc { background-color: #3498db; }   /* blau für DOC */
+.download.ppp { background-color: #f39c12; }   /* orange für PPP */
+
+.download:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.download svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
 }
 
 /* Footer */
