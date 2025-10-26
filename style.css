@@ -19,13 +19,14 @@ header .logo {
     text-decoration: none;
     color: #333;
     display: inline-block;
-    line-height: 1.1;
+    line-height: 1; /* enger Zeilenabstand */
 }
 
 .logo-main {
     font-size: 1.5rem;
     font-weight: 600;
     display: block;
+    margin-bottom: 0; /* kein zusätzlicher Abstand */
 }
 
 .logo-sub {
@@ -35,7 +36,7 @@ header .logo {
     color: #777;
     display: block;
     text-align: right;
-    margin-top: 2px; /* enger Abstand zur Hauptzeile */
+    margin-top: -2px; /* negativer Wert: schiebt näher heran */
     letter-spacing: 0.2px;
 }
 
