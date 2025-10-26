@@ -19,13 +19,14 @@ header .logo {
     text-decoration: none;
     color: #333;
     display: inline-block;
-    position: relative; /* für das Unterzeilen-Positioning */
 }
 
 .logo-main {
     font-size: 1.5rem;
     font-weight: 600;
     display: block;
+    line-height: 1; /* sehr enger Zeilenabstand */
+    margin: 0;
 }
 
 .logo-sub {
@@ -34,11 +35,9 @@ header .logo {
     font-weight: 400;
     color: #777;
     display: block;
-    position: absolute;
-    right: 0;       /* bündig am Ende des Hauptwortes */
-    top: 100%;      /* direkt unter dem Hauptwort */
-    margin-top: 0px; /* optional, minimaler Abstand */
-    letter-spacing: 0.2px;
+    text-align: right; /* bündig am Ende von „Religionsunterricht“ */
+    line-height: 1;    /* sehr kompakt */
+    margin: 0;         /* kein zusätzlicher Abstand */
 }
 
 /* Navigation */
