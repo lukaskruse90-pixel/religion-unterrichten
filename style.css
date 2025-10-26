@@ -15,7 +15,6 @@ header {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Logo mit Unterzeile */
 header .logo {
     text-decoration: none;
     color: #333;
@@ -36,10 +35,8 @@ header .logo {
     color: #777;
     display: block;
     text-align: right;
-    margin-top: 0;
-    line-height: 1;
+    margin-top: 2px; /* enger Abstand zur Hauptzeile */
     letter-spacing: 0.2px;
-    transform: translateY(-2px);
 }
 
 /* Navigation */
