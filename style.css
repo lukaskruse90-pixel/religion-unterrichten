@@ -214,6 +214,25 @@ main h1 {
     opacity: 0.9;
 }
 
+/* fix: keine fremden badges/overlays auf den download-buttons */
+.material-links a::before,
+.material-links a::after {
+  content: none !important;
+  background: none !important;
+}
+
+/* falls irgendwo ein background gesetzt wurde */
+.material-links a {
+  background-image: none !important;
+}
+
+/* sicherstellen, dass das FA-icon selbst dargestellt wird */
+.material-links i {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+}
+
 /* Footer */
 footer {
     text-align: center;
