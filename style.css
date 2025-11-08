@@ -256,33 +256,3 @@ html {
         margin-top: 15px;
     }
 }
-
-/* Fix: jegliche Dateityp-Badges entfernen (PDF/PNG/DOCX/PPTX, etc.) */
-.material-links a[href$=".pdf"]::before,
-.material-links a[href$=".pdf"]::after,
-.material-links a[href$=".png"]::before,
-.material-links a[href$=".png"]::after,
-.material-links a[href$=".doc"]::before,
-.material-links a[href$=".doc"]::after,
-.material-links a[href$=".docx"]::before,
-.material-links a[href$=".docx"]::after,
-.material-links a[href$=".ppt"]::before,
-.material-links a[href$=".ppt"]::after,
-.material-links a[href$=".pptx"]::before,
-.material-links a[href$=".pptx"]::after {
-  content: none !important;
-  background: none !important;
-  background-image: none !important;
-}
-
-/* Falls ein globales CSS Hintergründe auf Links setzt */
-.material-links a {
-  background-image: none !important;
-}
-
-/* Sicherstellen, dass das FA-Icon sichtbar ist */
-.material-links i {
-  font-size: 1.2rem;
-  line-height: 1;
-  display: inline-block;
-}
