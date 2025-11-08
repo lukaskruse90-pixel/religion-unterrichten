@@ -256,13 +256,3 @@ html {
         margin-top: 15px;
     }
 }
-
-/* Ultimativer Kill-Switch innerhalb der Button-Zone */
-.material-links a::before,
-.material-links a::after,
-.material-links a *::before,
-.material-links a *::after {
-  content: none !important;
-  background: none !important;
-  background-image: none !important;
-}
