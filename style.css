@@ -163,8 +163,22 @@ main h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.material-text {
-    max-width: 65%;
+.material-text h3 {
+    margin: 0 0 8px 0;
+}
+
+/* Überschriften-Links sollen wie normale Überschriften aussehen */
+.material-text h3 a {
+    color: inherit;          /* gleiche Farbe wie die Überschrift */
+    text-decoration: none;   /* kein Unterstrich */
+    cursor: pointer;         /* Mauszeiger zeigt „Link“ an */
+    display: inline-block;   /* sauberer Klickbereich */
+}
+
+/* optional: dezenter Hover-Effekt */
+.material-text h3 a:hover {
+    color: #1a73e8;          /* leichte Akzentfarbe beim Darüberfahren */
+    text-decoration: none;   /* kein Unterstrich */
 }
 
 .material-text h3 {
