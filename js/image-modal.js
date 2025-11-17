@@ -1,0 +1,21 @@
+<!-- 🔍 JavaScript für Klick-Vergrößerung -->
+<script>
+    const previews = document.querySelectorAll(".preview");
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("imgModalImg");
+    const closeBtn = document.querySelector(".img-modal .close");
+
+    previews.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        });
+    });
+
+    closeBtn.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+    };
