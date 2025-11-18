@@ -161,7 +161,7 @@ main h1 {
 /* etwas mehr Luft zwischen Text und Bild */
 .material-text {
     max-width: 65%;
-    margin-right: 30px;  /* fügt rechts einen Abstand ein */
+    margin-right: 30px; /* fügt rechts einen Abstand ein */
 }
 
 .material:hover {
@@ -175,27 +175,31 @@ main h1 {
 
 /* Überschriften-Links sollen wie normale Überschriften aussehen */
 .material-text h3 a {
-    color: inherit;          /* gleiche Farbe wie die Überschrift */
-    text-decoration: none;   /* kein Unterstrich */
-    cursor: pointer;         /* Mauszeiger zeigt „Link“ an */
-    display: inline-block;   /* sauberer Klickbereich */
+    color: inherit;        /* gleiche Farbe wie die Überschrift */
+    text-decoration: none; /* kein Unterstrich */
+    cursor: pointer;       /* Mauszeiger zeigt „Link“ an */
+    display: inline-block; /* sauberer Klickbereich */
 }
 
 /* optional: dezenter Hover-Effekt */
 .material-text h3 a:hover {
-    color: #1a73e8;          /* leichte Akzentfarbe beim Darüberfahren */
-    text-decoration: none;   /* kein Unterstrich */
+    color: #1a73e8;        /* leichte Akzentfarbe beim Darüberfahren */
+    text-decoration: none; /* kein Unterstrich */
+}
+
+.material-text h3 {
+    margin: 0 0 8px 0;
 }
 
 .material-text p {
     margin-top: 6px;
     color: #444;
-    text-align: justify;          /* Blocksatz */
-    text-justify: inter-word;     /* saubere Wortabstände */
-    hyphens: auto;                /* Silbentrennung */
+    text-align: justify;      /* Blocksatz */
+    text-justify: inter-word; /* saubere Wortabstände */
+    hyphens: auto;            /* Silbentrennung */
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
-    text-align-last: left;        /* letzte Zeile linksbündig */
+    text-align-last: left;    /* letzte Zeile linksbündig */
 }
 
 /* Vorschau-Bild */
@@ -227,9 +231,15 @@ main h1 {
 }
 
 /* Farben der Icons */
-.material-links a.pdf { background-color: #e74c3c; }
-.material-links a.doc { background-color: #3498db; }
-.material-links a.ppp { background-color: #f39c12; }
+.material-links a.pdf {
+    background-color: #e74c3c;
+}
+.material-links a.doc {
+    background-color: #3498db;
+}
+.material-links a.ppp {
+    background-color: #f39c12;
+}
 
 .material-links a:hover {
     transform: translateY(-2px);
@@ -283,6 +293,7 @@ html {
 /* Bild-Modal (Klick zum Vergrößern)                  */
 /* -------------------------------------------------- */
 
+/* Cursor & leichtes Hover-Feedback auf Vorschaubildern */
 .material img.preview {
     cursor: zoom-in;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -293,16 +304,18 @@ html {
     box-shadow: 0 4px 10px rgba(0,0,0,0.10);
 }
 
+/* Modal-Hintergrund */
 .img-modal {
-    display: none;
+    display: none;                 /* wird per JS auf block gesetzt */
     position: fixed;
     z-index: 9999;
-    inset: 0;
+    inset: 0;                      /* top/right/bottom/left: 0 */
     background: rgba(0, 0, 0, 0.85);
     padding: 60px 20px;
     box-sizing: border-box;
 }
 
+/* Vergrößertes Bild im Modal */
 .img-modal-content {
     display: block;
     margin: auto;
@@ -312,6 +325,7 @@ html {
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
+/* Schließen-Icon (X) oben rechts */
 .img-modal .close {
     position: absolute;
     top: 18px;
@@ -329,10 +343,12 @@ html {
     opacity: 0.8;
 }
 
+/* Auf kleineren Geräten: etwas weniger Rand */
 @media (max-width: 600px) {
     .img-modal {
         padding: 40px 10px;
     }
+
     .img-modal .close {
         right: 16px;
     }
@@ -361,6 +377,7 @@ html {
     background-color: #f2f2f2;
 }
 
+/* Für sehr kleine Bildschirme ggf. rechtsbündig + kleiner */
 @media (max-width: 500px) {
     .theme-toggle {
         font-size: 0.8rem;
@@ -426,19 +443,23 @@ html.dark .theme-toggle:hover {
     background-color: #2a2a2a;
 }
 
+/* Modal im Dark Mode: etwas heller, damit es sich noch abhebt */
 html.dark .img-modal {
     background: rgba(0, 0, 0, 0.9);
 }
 
+/* Dark Mode: Übersichtskacheln auf der Startseite */
 html.dark .overview-column {
     background-color: #1f1f1f;
     box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
+/* Überschrift in den Boxen etwas heller / akzentuierter */
 html.dark .overview-column h2 {
     color: #90caf9;
 }
 
+/* Links in den Boxen in hell statt #333 */
 html.dark .overview-column a {
     color: #e0e0e0;
 }
@@ -447,8 +468,9 @@ html.dark .overview-column a:hover {
     color: #90caf9;
 }
 
+/* Dark Mode: H2-Überschriften */
 html.dark h2,
 html.dark .kategorie h2 {
     color: #e8e8e8;
-    border-bottom-color: #444;
+    border-bottom-color: #444;  /* dezenter Rand im dunklen Modus */
 }
