@@ -35,11 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const systemPrefersDark = window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    // Initial Theme setzen
-    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    // Initial Theme setzen (falls noch keine Klasse da ist)
+    if (!root.classList.contains("dark") &&
+        (savedTheme === "dark" || (!savedTheme && systemPrefersDark))) {
         root.classList.add("dark");
-    } else {
-        root.classList.remove("dark");
     }
 
     function updateToggleIcon() {
@@ -53,7 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
             const isDark = root.classList.toggle("dark");
-            localStorage.setItem("theme", isDark ? "dark" : "light");
+            try {
+                localStorage.setItem("theme", isDark ? "dark" : "light");
+            } catch (e) {
+                // wenn localStorage blockiert ist, einfach ignorieren
+            }
             updateToggleIcon();
         });
     }
