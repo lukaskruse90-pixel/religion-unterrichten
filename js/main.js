@@ -57,9 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
             updateToggleIcon();
         });
     }
-
-    // --------------------------------------
-    // Theme-Animation erst NACH Init aktivieren
-    // --------------------------------------
-    root.classList.add("theme-ready");
 });
