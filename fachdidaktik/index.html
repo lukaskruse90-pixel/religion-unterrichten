@@ -8,6 +8,24 @@
     <!-- Root-absoluter Pfad für CSS -->
     <link rel="stylesheet" href="/style.css">
 
+<!-- Dark-Mode möglichst früh setzen, um Flackern zu vermeiden -->
+<script>
+(function() {
+    try {
+        var root = document.documentElement;
+        var savedTheme = localStorage.getItem("theme");
+        var systemPrefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+            root.classList.add("dark");
+        }
+    } catch (e) {
+        // Wenn localStorage blockiert ist, einfach nichts tun
+    }
+})();
+</script>
+
     <!-- Schriften & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
