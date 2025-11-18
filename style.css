@@ -379,20 +379,6 @@ html {
     }
 }
 
-/* Weiche Übergänge bei Theme-Wechsel */
-body,
-header,
-nav,
-footer,
-.material,
-.overview-column,
-.kategorie h2 {
-    transition: background-color 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease;
-}
-
 /* ------------------------------------------ */
 /* Dark Mode (wenn <html class="dark"> )      */
 /* ------------------------------------------ */
@@ -481,4 +467,18 @@ html.dark h2,
 html.dark .kategorie h2 {
     color: #e8e8e8;
     border-bottom-color: #444;  /* dezenter Rand im dunklen Modus */
+}
+
+/* Weiche Theme-Übergänge nur, wenn Seite geladen ist */
+html.theme-ready body,
+html.theme-ready header,
+html.theme-ready nav,
+html.theme-ready footer,
+html.theme-ready .material,
+html.theme-ready .overview-column,
+html.theme-ready .kategorie h2 {
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
 }
