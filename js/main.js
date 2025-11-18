@@ -55,4 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
             updateToggleIcon();
         });
     }
+        // Nachdem Theme initial gesetzt wurde, Animationen aktivieren
+    document.documentElement.classList.add("theme-ready");
+});
+
 });
