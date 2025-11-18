@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement;
+
     // --------------------------------------
     // Bild-Modal (Zoom auf .preview-Bilder)
     // --------------------------------------
@@ -28,26 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dark Mode
     // --------------------------------------
     const toggleBtn = document.getElementById("themeToggle");
-    const root = document.documentElement;
 
-    // gespeicherte Einstellung lesen
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+    // Initial Theme setzen
     if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
         root.classList.add("dark");
+    } else {
+        root.classList.remove("dark");
     }
 
-    // Icon passend setzen
     function updateToggleIcon() {
         if (!toggleBtn) return;
         const isDark = root.classList.contains("dark");
         toggleBtn.textContent = isDark ? "☀️" : "🌙";
     }
+
     updateToggleIcon();
 
-    // Klick auf Button: Modus umschalten + merken
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
             const isDark = root.classList.toggle("dark");
@@ -55,8 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
             updateToggleIcon();
         });
     }
-        // Nachdem Theme initial gesetzt wurde, Animationen aktivieren
-    document.documentElement.classList.add("theme-ready");
-});
 
+    // --------------------------------------
+    // Theme-Animation erst NACH Init aktivieren
+    // --------------------------------------
+    root.classList.add("theme-ready");
 });
