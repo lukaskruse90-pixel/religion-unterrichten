@@ -405,9 +405,10 @@ html.dark .logo-sub {
 
 html.dark nav ul li a {
     color: #e0e0e0;
+    border-bottom-color: transparent;
 }
 
-html.dark nav ul li a:hover,
+html.dark nav ul li a:hover {
     color: #90caf9;
     border-bottom-color: #90caf9;
 }
@@ -462,9 +463,3 @@ html.dark .overview-column a:hover {
     color: #90caf9;
 }
 
-/* Dark Mode: H2-Überschriften */
-html.dark h2,
-html.dark .kategorie h2 {
-    color: #e8e8e8;
-    border-bottom-color: #444;  /* dezenter Rand im dunklen Modus */
-}
