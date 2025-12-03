@@ -474,29 +474,3 @@ html.dark .kategorie h2 {
     color: #e8e8e8;
     border-bottom-color: #444;  /* dezenter Rand im dunklen Modus */
 }
-
-/* Fremde PDF-/DOC-/PPT-Icons (PNG, ::before usw.) deaktivieren */
-a[href$=".pdf"],
-a[href$=".doc"],
-a[href$=".docx"],
-a[href$=".ppt"],
-a[href$=".pptx"] {
-    background: none !important;
-}
-
-/* Falls irgendwo über ::before ein Bild-Icon erzeugt wird */
-a[href$=".pdf"]::before,
-a[href$=".doc"]::before,
-a[href$=".docx"]::before,
-a[href$=".ppt"]::before,
-a[href$=".pptx"]::before {
-    content: none !important;
-    background: none !important;
-}
-
-/* Speziell deine bunten Kacheln noch einmal „scharfstellen“ */
-.material-links a.pdf,
-.material-links a.doc,
-.material-links a.ppp {
-    background-image: none !important;
-}
