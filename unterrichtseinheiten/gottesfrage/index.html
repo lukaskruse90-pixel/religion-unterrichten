@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gottesfrage – Unterricht</title>
 
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Dark-Mode möglichst früh setzen, um Flackern zu vermeiden -->
+<script>
+(function() {
+    try {
+        var root = document.documentElement;
+        var savedTheme = localStorage.getItem("theme");
+        var systemPrefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+            root.classList.add("dark");
+        }
+    } catch (e) {
+        // Wenn localStorage blockiert ist, einfach nichts tun
+    }
+})();
+</script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <span class="logo-main">Religionsunterricht</span>
+    <span class="logo-sub">reflexiv</span>
+  </a>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Dark Mode umschalten">
+        🌙
+    </button>
+  
+</header>
+
+<nav>
+  <ul>
+    <li><a href="/fachdidaktik/">Fachdidaktik</a></li>
+    <li><a href="/unterrichtseinheiten/">Unterrichtseinheiten</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1>Dysfunktionalität von Religion</h1>
+  
+  <section class="kategorie">
+    <h2>Einstiegsstunde</h2>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>Was ist ein Beweis?</h3>
+        <p>...</p>
+        <div class="material-links">
+          <a href="pdfs/1-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/1-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/1-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/1-?.png" alt="?-Illustration" class="preview" />
+    </div>
+  </section>
+
+  <section class="kategorie">
+    <h2>?</h2>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>?</p>
+        <div class="material-links">
+          <a href="pdfs/2-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/2-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/2-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/2-?.png" alt="?-Illustration" class="preview" />
+    </div>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>?</p>
+        <div class="material-links">
+          <a href="pdfs/3-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/3-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/3-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/4-?.png" alt="Perspektiven-Illustration" class="preview" />
+    </div>
+  </section>
+
+  <section class="kategorie">
+    <h2>?</h2>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/4-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/4-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/4-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/4-?.png" alt="?-Illustration" class="preview" />
+    </div>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/5-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/5-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/5-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/5-?.png" alt="?-Illustration" class="preview" />
+    </div>
+  </section>
+
+  <section class="kategorie">
+    <h2>?</h2>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/6-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/6-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/6-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/6-?.png" alt="?-Illustration" class="preview" />
+    </div>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/7-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/7-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/7-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/7-?.png" alt="?-Illustration" class="preview" />
+    </div>
+  </section>
+
+  <section class="kategorie">
+    <h2>?</h2>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/8-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/8-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/8-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/8-?.png" alt="?-Illustration" class="preview" />
+    </div>
+
+    <div class="material">
+      <div class="material-text">
+        <h3>?</h3>
+        <p>Kurze Beschreibung des Materials.</p>
+        <div class="material-links">
+          <a href="pdfs/9-?.pdf" class="pdf"><i class="fa-solid fa-file-pdf"></i></a>
+          <a href="docs/9-?.docx" class="doc"><i class="fa-solid fa-file-word"></i></a>
+          <a href="ppts/9-?.pptx" class="ppp"><i class="fa-solid fa-file-powerpoint"></i></a>
+        </div>
+      </div>
+      <img src="bilder/9-?.png" alt="?-Illustration" class="preview" />
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2025 Religionsunterricht
+</footer>
+
+  <!-- MODAL für vergrößerte Bildansicht -->
+<div id="imgModal" class="img-modal">
+    <span class="close">&times;</span>
+    <img class="img-modal-content" id="imgModalImg">
+</div>
+
+<script src="/js/main.js"></script>
+  
+</body>
+</html>
