@@ -464,6 +464,20 @@ html.dark nav ul li a:hover {
     border-bottom-color: #90caf9;
 }
 
+html.dark nav ul li.dropdown .dropdown-menu {
+    background-color: #1f1f1f;
+    border-color: #444;
+}
+
+html.dark nav ul li.dropdown .dropdown-menu li a {
+    color: #e0e0e0;
+}
+
+html.dark nav ul li.dropdown .dropdown-menu li a:hover {
+    background-color: #2a2a2a;
+    color: #90caf9;
+}
+
 html.dark .material,
 html.dark .overview-column {
     background-color: #1f1f1f;
