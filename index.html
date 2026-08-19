@@ -1,300 +1,212 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Religionsunterricht reflexiv</title>
-
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- Dark Mode möglichst früh setzen, um Flackern zu vermeiden -->
-    <script>
-        (function () {
-            try {
-                var root = document.documentElement;
-                var savedTheme = localStorage.getItem("theme");
-
-                var systemPrefersDark =
-                    window.matchMedia &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-                if (
-                    savedTheme === "dark" ||
-                    (!savedTheme && systemPrefersDark)
-                ) {
-                    root.classList.add("dark");
-                }
-            } catch (e) {
-                // Wenn localStorage blockiert ist, nichts tun
-            }
-        })();
-    </script>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
-</head>
-
-
-<body>
-
-    <!-- =========================================
-         HEADER
-         ========================================= -->
-
-    <header>
-
-        <a href="/" class="logo">
-            <span class="logo-main">Religionsunterricht</span>
-            <span class="logo-sub">reflexiv</span>
-        </a>
-
-        <button
-            id="themeToggle"
-            class="theme-toggle"
-            type="button"
-            aria-label="Dark Mode umschalten"
-        >
-            🌙
-        </button>
-
-    </header>
-
-
-    <!-- =========================================
-         NAVIGATION
-         ========================================= -->
-
-    <nav aria-label="Hauptnavigation">
-
-        <ul>
-
-            <!-- Fachdidaktik -->
-            <li class="dropdown">
-
-                <button
-                    class="nav-label"
-                    type="button"
-                    aria-haspopup="true"
-                >
-                    Fachdidaktik
-                </button>
-
-                <ul class="dropdown-menu">
-
-                    <li>
-                        <a href="/fachdidaktik/reflexiver-religionsunterricht/">
-                            Reflexiver Religionsunterricht
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/funktionalitaet/">
-                            Funktionalität
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/wahrheitsfrage/">
-                            Wahrheitsfrage
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/religionstheologie/">
-                            Religionstheologie
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/hermeneutik/">
-                            Hermeneutik
-                        </a>
-                    </li>
-
-                </ul>
-
-            </li>
-
-
-            <!-- Unterrichtseinheiten -->
-            <li class="dropdown">
-
-                <button
-                    class="nav-label"
-                    type="button"
-                    aria-haspopup="true"
-                >
-                    Unterrichtseinheiten
-                </button>
-
-                <ul class="dropdown-menu">
-
-                    <li>
-                        <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
-                            Funktionalität von Religion
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
-                            Dysfunktionalität von Religion
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/gottesfrage/">
-                            Gottesfrage
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/religionstheologie/">
-                            Religionstheologie
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/philosophisch-theologische-hermeneutik/">
-                            Philosophisch-theologische Hermeneutik
-                        </a>
-                    </li>
-
-                </ul>
-
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-    <!-- =========================================
-         HAUPTINHALT
-         ========================================= -->
-
-    <main>
-
-        <h1>Religionsunterricht reflexiv</h1>
-
-        <p class="intro">
-            Fachdidaktische Grundlagen und Unterrichtseinheiten
-            für einen reflexiven Religionsunterricht.
-        </p>
-
-
-        <div class="overview-grid">
-
-
-            <!-- =================================
-                 FACHDIDAKTIK
-                 ================================= -->
-
-            <section class="overview-column">
-
-                <h2>Fachdidaktik</h2>
-
-                <ul>
-
-                    <li>
-                        <a href="/fachdidaktik/reflexiver-religionsunterricht/">
-                            Was ist Reflexiver Religionsunterricht (RRU)?
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/funktionalitaet/">
-                            Warum Funktionalität im RRU?
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/wahrheitsfrage/">
-                            Warum die Wahrheitsfrage im RRU?
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/religionstheologie/">
-                            Warum Religionstheologie im RRU?
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/fachdidaktik/hermeneutik/">
-                            Warum Hermeneutik im RRU?
-                        </a>
-                    </li>
-
-                </ul>
-
-            </section>
-
-
-            <!-- =================================
-                 UNTERRICHTSEINHEITEN
-                 ================================= -->
-
-            <section class="overview-column">
-
-                <h2>Unterrichtseinheiten</h2>
-
-                <ul>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
-                            Funktionalität von Religion
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
-                            Dysfunktionalität von Religion
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/gottesfrage/">
-                            Gottesfrage
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/religionstheologie/">
-                            Religionstheologie
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/unterrichtseinheiten/philosophisch-theologische-hermeneutik/">
-                            Philosophisch-theologische Hermeneutik
-                        </a>
-                    </li>
-
-                </ul>
-
-            </section>
-
-
-        </div>
-
-    </main>
-
-
-    <!-- =========================================
-         FOOTER
-         ========================================= -->
-
-    <footer>
-        &copy; 2026 Religionsunterricht
-    </footer>
-
-
-    <script src="/js/main.js"></script>
-
-</body>
-
+    <title>Religionsunterricht</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Dark-Mode möglichst früh setzen, um Flackern zu vermeiden -->
+<script>
+(function() {
+    try {
+        var root = document.documentElement;
+        var savedTheme = localStorage.getItem("theme");
+        var systemPrefersDark = window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+            root.classList.add("dark");
+        }
+    } catch (e) {
+        // Wenn localStorage blockiert ist, einfach nichts tun
+    }
+})();
+</script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
+</head> 
+
+<body> 
+
+<header> 
+    <a href="/" class="logo"> 
+        <span class="logo-main">Religionsunterricht</span> 
+        <span class="logo-sub">reflexiv</span> 
+    </a> 
+ 
+    <button id="themeToggle" class="theme-toggle" aria-label="Dark Mode umschalten"> 
+        🌙 
+    </button> 
+</header> 
+ 
+<nav> 
+  <ul> 
+
+    <!-- Fachdidaktik -->
+    <li class="dropdown"> 
+      <span class="nav-label">Fachdidaktik</span> 
+
+      <ul class="dropdown-menu"> 
+        <li>
+          <a href="/fachdidaktik/reflexiver-religionsunterricht/">
+            Reflexiver Religionsunterricht
+          </a>
+        </li> 
+
+        <li>
+          <a href="/fachdidaktik/funktionalitaet/">
+            Funktionalität
+          </a>
+        </li> 
+
+        <li>
+          <a href="/fachdidaktik/wahrheitsfrage/">
+            Wahrheitsfrage
+          </a>
+        </li> 
+
+        <li>
+          <a href="/fachdidaktik/religionstheologie/">
+            Religionstheologie
+          </a>
+        </li> 
+
+        <li>
+          <a href="/fachdidaktik/hermeneutik/">
+            Hermeneutik
+          </a>
+        </li> 
+      </ul> 
+    </li> 
+
+
+    <!-- Unterrichtseinheiten -->
+    <li class="dropdown"> 
+      <span class="nav-label">Unterrichtseinheiten</span> 
+
+      <ul class="dropdown-menu"> 
+        <li>
+          <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
+            Funktionalität von Religion
+          </a>
+        </li> 
+
+        <li>
+          <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
+            Dysfunktionalität von Religion
+          </a>
+        </li> 
+
+        <li>
+          <a href="/unterrichtseinheiten/gottesfrage/">
+            Gottesfrage
+          </a>
+        </li> 
+
+        <li>
+          <a href="/unterrichtseinheiten/religionstheologie/">
+            Religionstheologie
+          </a>
+        </li> 
+
+        <li>
+          <a href="/unterrichtseinheiten/philosophisch-theologische-hermeneutik/">
+            Philosophisch-theologische Hermeneutik
+          </a>
+        </li> 
+      </ul> 
+    </li> 
+
+  </ul> 
+</nav> 
+ 
+<main> 
+ 
+    <div class="overview-grid"> 
+ 
+        <!-- Fachdidaktik --> 
+        <section class="overview-column"> 
+            <h2>Fachdidaktik</h2> 
+
+            <ul> 
+                <li>
+                    <a href="/fachdidaktik/reflexiver-religionsunterricht/">
+                        Was ist Reflexiver Religionsunterricht (RRU)?
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/fachdidaktik/funktionalitaet/">
+                        Warum Funktionalität im RRU?
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/fachdidaktik/wahrheitsfrage/">
+                        Warum die Wahrheitsfrage im RRU?
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/fachdidaktik/religionstheologie/">
+                        Warum Religionstheologie im RRU?
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/fachdidaktik/hermeneutik/">
+                        Warum Hermeneutik im RRU?
+                    </a>
+                </li> 
+            </ul> 
+        </section> 
+ 
+        <!-- Unterrichtseinheiten --> 
+        <section class="overview-column"> 
+            <h2>Unterrichtseinheiten</h2> 
+
+            <ul> 
+                <li>
+                    <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
+                        Funktionalität von Religion
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
+                        Dysfunktionalität von Religion
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/unterrichtseinheiten/gottesfrage/">
+                        Gottesfrage
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/unterrichtseinheiten/religionstheologie/">
+                        Religionstheologie
+                    </a>
+                </li> 
+
+                <li>
+                    <a href="/unterrichtseinheiten/philosophisch-theologische-hermeneutik/">
+                        Philosophisch-theologische Hermeneutik
+                    </a>
+                </li> 
+            </ul> 
+        </section> 
+ 
+    </div> 
+</main> 
+ 
+<footer> 
+    &copy; 2025 Religionsunterricht 
+</footer> 
+ 
+<script src="/js/main.js"></script> 
+     
+</body> 
 </html>
