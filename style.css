@@ -146,7 +146,7 @@ main {
 
 .overview-column h2 {
     margin-top: 0;
-    color: #1a73e8;
+    color: #333;
     font-size: 1.3rem;
 }
 
@@ -520,7 +520,7 @@ html.dark .overview-column {
 
 /* Überschrift in den Boxen etwas heller / akzentuierter */
 html.dark .overview-column h2 {
-    color: #90caf9;
+    color: #e0e0e0;
 }
 
 /* Links in den Boxen in hell statt #333 */
