@@ -1,376 +1,186 @@
-/* ==================================================
-   GRUNDLEGENDE EINSTELLUNGEN
-   ================================================== */
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Grundlegende Einstellungen */
 body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-
     background-color: #fafafa;
     color: #222;
-
     line-height: 1.7;
 }
 
 
-/* ==================================================
-   HEADER
-   ================================================== */
-
+/* Header */
 header {
     background-color: #ffffff;
-
     padding: 22px 40px;
-
     border-bottom: 1px solid #e0e0e0;
 }
 
 
-/* Logo */
-
 header .logo {
-    display: inline-block;
-
-    color: #333;
-
     text-decoration: none;
+    color: #333;
+    display: inline-block;
 }
+
 
 .logo-main {
-    display: block;
-
-    margin: 0;
-
     font-size: 1.5rem;
     font-weight: 600;
-
+    display: block;
     line-height: 1;
+    margin: 0;
 }
 
+
 .logo-sub {
-    display: block;
-
-    margin: 0;
-
-    color: #777;
-
     font-size: 0.85rem;
     font-style: italic;
     font-weight: 400;
-
+    color: #777;
+    display: block;
     text-align: right;
-
     line-height: 1;
+    margin: 0;
 }
 
 
-/* ==================================================
-   DARK-MODE-BUTTON
-   ================================================== */
-
-.theme-toggle {
-    float: right;
-
-    margin-top: 4px;
-
-    padding: 6px 10px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #e0e0e0;
-    border-radius: 999px;
-
-    background-color: #ffffff;
-    color: #333;
-
-    font-family: inherit;
-    font-size: 0.9rem;
-
-    line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.theme-toggle:hover {
-    background-color: #f2f2f2;
-}
-
-.theme-toggle:focus-visible {
-    outline: 2px solid #1a73e8;
-    outline-offset: 3px;
-}
-
-
-/* ==================================================
-   NAVIGATION
-   ================================================== */
-
+/* Navigation */
 nav {
     background-color: #ffffff;
-
     border-bottom: 1px solid #e0e0e0;
 }
 
 
-/* Nur die oberste Navigationsliste */
-
-nav > ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-
-    list-style: none;
-}
-
-
-/* Haupteinträge */
-
-nav > ul > li {
-    position: relative;
-}
-
-
-/* Oberste Navigationsbegriffe */
-
-.nav-label {
-    display: block;
-
-    padding: 12px 20px;
-
-    border: none;
-    border-bottom: 2px solid transparent;
-
-    background: transparent;
-
-    color: #555;
-
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 500;
-
-    cursor: default;
-
-    transition:
-        color 0.3s ease,
-        border-bottom-color 0.3s ease;
-}
-
-
-/* Hover auf Hauptkategorie */
-
-nav > ul > li.dropdown:hover > .nav-label,
-nav > ul > li.dropdown:focus-within > .nav-label {
-    color: #1a73e8;
-    border-bottom-color: #1a73e8;
-}
-
-.nav-label:focus-visible {
-    outline: 2px solid #1a73e8;
-    outline-offset: -2px;
-}
-
-
-/* ==================================================
-   DROPDOWN-MENÜ
-   ================================================== */
-
-.dropdown-menu {
-    display: none;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-
-    z-index: 1000;
-
-    min-width: 280px;
-
-    margin: 0;
-    padding: 8px 0;
-
-    list-style: none;
-
-    background-color: #ffffff;
-
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 
 /*
-   Das Dropdown öffnet sich weiterhin beim
-   Darüberfahren mit der Maus.
-
-   :focus-within sorgt zusätzlich dafür,
-   dass es mit Tastatur bzw. auf manchen
-   Touch-Geräten nutzbar bleibt.
+   Links und die beiden Oberbegriffe
+   Fachdidaktik / Unterrichtseinheiten
+   erhalten dieselbe Gestaltung.
 */
-
-nav > ul > li.dropdown:hover > .dropdown-menu,
-nav > ul > li.dropdown:focus-within > .dropdown-menu {
+nav ul li a,
+nav ul li .nav-label {
     display: block;
-}
-
-
-.dropdown-menu li {
-    width: 100%;
-}
-
-
-.dropdown-menu li a {
-    display: block;
-
-    padding: 10px 16px;
-
+    padding: 12px 20px;
     color: #555;
-
     text-decoration: none;
-
     font-weight: 500;
-
-    white-space: nowrap;
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 
-.dropdown-menu li a:hover,
-.dropdown-menu li a:focus-visible {
-    background-color: #f5f5f5;
+nav ul li .nav-label {
+    cursor: default;
+}
 
+
+nav ul li a:hover,
+nav ul li.dropdown:hover > .nav-label {
     color: #1a73e8;
-
-    outline: none;
+    border-bottom: 2px solid #1a73e8;
 }
 
 
-/* ==================================================
-   MAIN-BEREICH
-   ================================================== */
+/* Dropdown-Menü in der Navigation */
+nav ul li.dropdown {
+    position: relative;
+}
 
-main {
-    flex: 1;
 
+nav ul li.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    min-width: 280px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+
+/* Dropdown erscheint beim Darüberfahren */
+nav ul li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+nav ul li.dropdown .dropdown-menu li {
     width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    padding: 60px 20px;
-
-    box-sizing: border-box;
 }
 
 
-/* Hauptüberschrift */
-
-main h1 {
-    margin-top: 0;
-    margin-bottom: 12px;
-
-    text-align: center;
-
-    font-size: 2rem;
-    font-weight: 600;
-
-    line-height: 1.3;
-}
-
-
-/* Kurzer Einführungstext auf der Startseite */
-
-.intro {
-    max-width: 680px;
-
-    margin: 0 auto 40px auto;
-
+nav ul li.dropdown .dropdown-menu li a {
+    display: block;
+    padding: 10px 16px;
     color: #555;
-
-    text-align: center;
-
-    font-size: 1.05rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: none;
+    white-space: nowrap;
 }
 
 
-/* ==================================================
-   STARTSEITE: ÜBERSICHT
-   ================================================== */
+nav ul li.dropdown .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+    color: #1a73e8;
+    border-bottom: none;
+}
 
+
+/* Main-Bereich */
+main {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+/* Überblicksseite */
 .overview-grid {
     display: flex;
-
     justify-content: space-between;
-
-    align-items: stretch;
-
     gap: 40px;
-
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
 
 .overview-column {
-    flex: 1;
-
+    background: #fff;
     padding: 25px;
-
-    background-color: #ffffff;
-
     border-radius: 12px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex: 1;
 }
 
-
-/* Überschriften der beiden Boxen */
 
 .overview-column h2 {
     margin-top: 0;
-    margin-bottom: 15px;
-
     color: #1a73e8;
-
     font-size: 1.3rem;
-    font-weight: 600;
 }
 
 
-/* Linklisten */
-
 .overview-column ul {
-    margin: 15px 0 0 0;
-    padding: 0;
-
     list-style: none;
+    padding: 0;
+    margin: 15px 0;
 }
 
 
@@ -379,94 +189,70 @@ main h1 {
 }
 
 
-.overview-column ul li:last-child {
-    margin-bottom: 0;
-}
-
-
 .overview-column a {
-    color: #333;
-
     text-decoration: none;
-
+    color: #333;
     font-weight: 500;
-
-    transition: color 0.2s ease;
+    transition: color 0.2s;
 }
 
 
-.overview-column a:hover,
-.overview-column a:focus-visible {
+.overview-column a:hover {
     color: #1a73e8;
 }
 
 
-.overview-column a:focus-visible {
-    outline: 2px solid #1a73e8;
-    outline-offset: 3px;
-
-    border-radius: 2px;
+/* Responsive */
+@media (max-width: 800px) {
+    .overview-grid {
+        flex-direction: column;
+    }
 }
 
 
-/* ==================================================
-   KATEGORIE-ÜBERSCHRIFTEN
-   AUF UNTERRICHTSSEITEN
-   ================================================== */
+/* Überschrift auf der Startseite mittig */
+main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+
+/* Kategorie-Überschriften */
 .kategorie h2 {
-    margin-top: 60px;
-    margin-bottom: 25px;
-
-    padding-bottom: 8px;
-
-    color: #222;
-
     font-size: 1.35rem;
     font-weight: 600;
-
+    margin-top: 60px;
+    margin-bottom: 25px;
+    color: #222;
     border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 8px;
 }
 
 
-/* ==================================================
-   UNTERRICHTSMATERIALIEN
-   ================================================== */
-
+/* Unterrichtsmaterialien */
 .material {
     display: flex;
-
     justify-content: space-between;
     align-items: flex-start;
-
-    margin-bottom: 30px;
-    padding: 24px;
-
     background-color: #ffffff;
-
+    padding: 24px;
+    margin-bottom: 30px;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+/* etwas mehr Luft zwischen Text und Bild */
+.material-text {
+    max-width: 65%;
+    margin-right: 30px;
 }
 
 
 .material:hover {
     transform: translateY(-2px);
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-
-/* Textbereich */
-
-.material-text {
-    max-width: 65%;
-
-    margin-right: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 
@@ -475,123 +261,80 @@ main h1 {
 }
 
 
-/* Überschriften-Links */
-
+/* Überschriften-Links sollen wie normale Überschriften aussehen */
 .material-text h3 a {
-    display: inline-block;
-
     color: inherit;
-
     text-decoration: none;
-
     cursor: pointer;
+    display: inline-block;
 }
 
 
+/* optional: dezenter Hover-Effekt */
 .material-text h3 a:hover {
     color: #1a73e8;
-
     text-decoration: none;
 }
 
 
-/* Beschreibung */
+.material-text h3 {
+    margin: 0 0 8px 0;
+}
+
 
 .material-text p {
     margin-top: 6px;
-
     color: #444;
-
     text-align: justify;
-    text-align-last: left;
-
     text-justify: inter-word;
-
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+    text-align-last: left;
 }
 
 
-/* ==================================================
-   VORSCHAUBILDER
-   ================================================== */
-
+/* Vorschau-Bild */
 .material img.preview {
     max-width: 30%;
-
     border-radius: 8px;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     object-fit: cover;
-
-    cursor: zoom-in;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 
-.material img.preview:hover {
-    transform: scale(1.02);
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-}
-
-
-/* ==================================================
-   DOWNLOAD-BUTTONS
-   ================================================== */
-
+/* Icon-Buttons für Downloads */
 .material-links {
-    display: flex;
-
-    gap: 10px;
-
     margin-top: 12px;
+    display: flex;
+    gap: 10px;
 }
 
 
 .material-links a {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     width: 40px;
     height: 40px;
-
     border-radius: 8px;
-
     color: white;
-
     font-size: 1.2rem;
-
+    transition: transform 0.2s ease, opacity 0.2s ease;
     text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
 }
 
 
-/* PDF */
-
+/* Farben der Icons */
 .material-links a.pdf {
     background-color: #e74c3c;
 }
 
 
-/* Word */
-
 .material-links a.doc {
     background-color: #3498db;
 }
 
-
-/* PowerPoint */
 
 .material-links a.ppp {
     background-color: #f39c12;
@@ -600,276 +343,183 @@ main h1 {
 
 .material-links a:hover {
     transform: translateY(-2px);
-
     opacity: 0.9;
 }
 
 
-.material-links a:focus-visible {
-    outline: 2px solid #1a73e8;
-    outline-offset: 3px;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 35px;
+    background-color: #ffffff;
+    color: #555;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 60px;
+    font-size: 0.95rem;
 }
 
 
-/* ==================================================
-   BILD-MODAL
-   ================================================== */
+/* Sanftes Scrollen */
+html {
+    scroll-behavior: smooth;
+}
 
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .material {
+        flex-direction: column;
+    }
+
+    .material-text {
+        max-width: 100%;
+    }
+
+    .material img.preview {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    main {
+        padding: 40px 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .material img.preview {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+}
+
+
+/* -------------------------------------------------- */
+/* Bild-Modal (Klick zum Vergrößern)                  */
+/* -------------------------------------------------- */
+
+
+/* Cursor & leichtes Hover-Feedback auf Vorschaubildern */
+.material img.preview {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.material img.preview:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+}
+
+
+/* Modal-Hintergrund */
 .img-modal {
     display: none;
-
     position: fixed;
-
-    inset: 0;
-
     z-index: 9999;
-
-    padding: 60px 20px;
-
-    box-sizing: border-box;
-
+    inset: 0;
     background: rgba(0, 0, 0, 0.85);
+    padding: 60px 20px;
+    box-sizing: border-box;
 }
 
 
+/* Vergrößertes Bild im Modal */
 .img-modal-content {
     display: block;
-
+    margin: auto;
     max-width: 90%;
     max-height: 90vh;
-
-    margin: auto;
-
     border-radius: 12px;
-
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 
-/* Schließen-Button */
-
+/* Schließen-Icon (X) oben rechts */
 .img-modal .close {
     position: absolute;
-
     top: 18px;
     right: 26px;
-
-    padding: 0;
-
-    border: none;
-
-    background: transparent;
-
-    color: #ffffff;
-
-    font-family: inherit;
     font-size: 32px;
     font-weight: 600;
-
-    line-height: 1;
-
+    color: #ffffff;
     cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+    line-height: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 
 .img-modal .close:hover {
     transform: scale(1.1);
-
     opacity: 0.8;
 }
 
 
-.img-modal .close:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 4px;
-}
-
-
-/* ==================================================
-   FOOTER
-   ================================================== */
-
-footer {
-    margin-top: 60px;
-
-    padding: 35px;
-
-    background-color: #ffffff;
-
-    color: #555;
-
-    text-align: center;
-
-    font-size: 0.95rem;
-
-    border-top: 1px solid #e0e0e0;
-}
-
-
-/* ==================================================
-   RESPONSIVE DESIGN
-   ================================================== */
-
-
-/* Startseiten-Boxen untereinander */
-
-@media (max-width: 800px) {
-
-    .overview-grid {
-        flex-direction: column;
-
-        gap: 25px;
-    }
-
-}
-
-
-/* Materialkarten auf Mobilgeräten */
-
-@media (max-width: 700px) {
-
-    main {
-        padding: 40px 15px;
-    }
-
-
-    .material {
-        flex-direction: column;
-    }
-
-
-    .material-text {
-        max-width: 100%;
-
-        margin-right: 0;
-    }
-
-
-    .material img.preview {
-        max-width: 100%;
-
-        margin-top: 20px;
-    }
-
-}
-
-
-/* Navigation und Dropdowns auf kleinen Geräten */
-
+/* Auf kleineren Geräten: etwas weniger Rand */
 @media (max-width: 600px) {
-
-    header {
-        padding: 20px;
-    }
-
-
-    nav > ul {
-        gap: 4px;
-    }
-
-
-    .nav-label {
-        padding: 11px 12px;
-
-        font-size: 0.95rem;
-    }
-
-
-    /*
-       Auf schmalen Bildschirmen wird das Dropdown
-       unter dem jeweiligen Menüpunkt zentriert.
-    */
-
-    .dropdown-menu {
-        left: 50%;
-
-        width: max-content;
-        min-width: 0;
-        max-width: calc(100vw - 24px);
-
-        transform: translateX(-50%);
-    }
-
-
-    .dropdown-menu li a {
-        white-space: normal;
-    }
-
-
     .img-modal {
         padding: 40px 10px;
     }
 
-
     .img-modal .close {
         right: 16px;
     }
-
 }
 
 
-/* Sehr kleine Bildschirme */
+/* ------------------------------------------ */
+/* Dark-Mode-Toggle-Button                    */
+/* ------------------------------------------ */
 
+
+.theme-toggle {
+    float: right;
+    margin-top: 4px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.theme-toggle:hover {
+    background-color: #f2f2f2;
+}
+
+
+/* Für sehr kleine Bildschirme ggf. rechtsbündig + kleiner */
 @media (max-width: 500px) {
-
     .theme-toggle {
-        padding: 5px 8px;
-
         font-size: 0.8rem;
+        padding: 5px 8px;
     }
-
-
-    main h1 {
-        font-size: 1.7rem;
-    }
-
-
-    .intro {
-        font-size: 1rem;
-    }
-
-
-    .overview-column {
-        padding: 22px 20px;
-    }
-
-
-    .material img.preview {
-        max-width: 100%;
-
-        margin-top: 15px;
-    }
-
 }
 
 
-/* ==================================================
-   DARK MODE
-   ================================================== */
+/* ------------------------------------------ */
+/* Dark Mode (wenn <html class="dark"> )      */
+/* ------------------------------------------ */
+
 
 html.dark body {
     background-color: #121212;
-
     color: #f5f5f5;
 }
 
-
-/* Header, Navigation und Footer */
 
 html.dark header,
 html.dark nav,
 html.dark footer {
     background-color: #1e1e1e;
-
     border-color: #333333;
 }
 
-
-/* Logo */
 
 html.dark .logo-main {
     color: #f5f5f5;
@@ -881,81 +531,42 @@ html.dark .logo-sub {
 }
 
 
-/* Navigation */
-
-html.dark .nav-label {
+/* Navigation im Dark Mode */
+html.dark nav ul li a,
+html.dark nav ul li .nav-label {
     color: #e0e0e0;
+    border-bottom-color: transparent;
 }
 
 
-html.dark nav > ul > li.dropdown:hover > .nav-label,
-html.dark nav > ul > li.dropdown:focus-within > .nav-label {
+html.dark nav ul li a:hover,
+html.dark nav ul li.dropdown:hover > .nav-label {
     color: #90caf9;
-
     border-bottom-color: #90caf9;
 }
 
 
-/* Dropdown */
-
-html.dark .dropdown-menu {
+html.dark nav ul li.dropdown .dropdown-menu {
     background-color: #1f1f1f;
-
     border-color: #444;
 }
 
 
-html.dark .dropdown-menu li a {
+html.dark nav ul li.dropdown .dropdown-menu li a {
     color: #e0e0e0;
 }
 
 
-html.dark .dropdown-menu li a:hover,
-html.dark .dropdown-menu li a:focus-visible {
+html.dark nav ul li.dropdown .dropdown-menu li a:hover {
     background-color: #2a2a2a;
-
     color: #90caf9;
 }
 
 
-/* Haupttext */
-
-html.dark .intro {
-    color: #c7c7c7;
-}
-
-
-/* Startseiten-Boxen */
-
+html.dark .material,
 html.dark .overview-column {
     background-color: #1f1f1f;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-
-html.dark .overview-column h2 {
-    color: #90caf9;
-}
-
-
-html.dark .overview-column a {
-    color: #e0e0e0;
-}
-
-
-html.dark .overview-column a:hover,
-html.dark .overview-column a:focus-visible {
-    color: #90caf9;
-}
-
-
-/* Materialkarten */
-
-html.dark .material {
-    background-color: #1f1f1f;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 
@@ -964,20 +575,14 @@ html.dark .material-text p {
 }
 
 
-/* Downloadbuttons */
-
 html.dark .material-links a {
     opacity: 0.95;
 }
 
 
-/* Dark-Mode-Schalter */
-
 html.dark .theme-toggle {
     background-color: #1f1f1f;
-
     border-color: #444;
-
     color: #f5f5f5;
 }
 
@@ -987,17 +592,39 @@ html.dark .theme-toggle:hover {
 }
 
 
-/* Kategorieüberschriften */
-
-html.dark .kategorie h2 {
-    color: #e8e8e8;
-
-    border-bottom-color: #444;
+/* Modal im Dark Mode: etwas heller, damit es sich noch abhebt */
+html.dark .img-modal {
+    background: rgba(0, 0, 0, 0.9);
 }
 
 
-/* Bildmodal */
+/* Dark Mode: Übersichtskacheln auf der Startseite */
+html.dark .overview-column {
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
 
-html.dark .img-modal {
-    background: rgba(0, 0, 0, 0.9);
+
+/* Überschrift in den Boxen etwas heller / akzentuierter */
+html.dark .overview-column h2 {
+    color: #90caf9;
+}
+
+
+/* Links in den Boxen in hell statt #333 */
+html.dark .overview-column a {
+    color: #e0e0e0;
+}
+
+
+html.dark .overview-column a:hover {
+    color: #90caf9;
+}
+
+
+/* Dark Mode: H2-Überschriften */
+html.dark h2,
+html.dark .kategorie h2 {
+    color: #e8e8e8;
+    border-bottom-color: #444;
 }
