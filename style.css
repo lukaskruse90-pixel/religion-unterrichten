@@ -237,10 +237,6 @@ main h1 {
     text-decoration: none; /* kein Unterstrich */
 }
 
-.material-text h3 {
-    margin: 0 0 8px 0;
-}
-
 .material-text p {
     margin-top: 6px;
     color: #444;
@@ -513,12 +509,6 @@ html.dark .theme-toggle:hover {
 /* Modal im Dark Mode: etwas heller, damit es sich noch abhebt */
 html.dark .img-modal {
     background: rgba(0, 0, 0, 0.9);
-}
-
-/* Dark Mode: Übersichtskacheln auf der Startseite */
-html.dark .overview-column {
-    background-color: #1f1f1f;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 /* Überschrift in den Boxen etwas heller / akzentuierter */
