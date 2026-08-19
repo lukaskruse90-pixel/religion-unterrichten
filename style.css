@@ -459,12 +459,14 @@ html.dark .logo-sub {
     color: #bbbbbb;
 }
 
-html.dark nav ul li a {
+html.dark nav ul li a,
+html.dark nav ul li .nav-label {
     color: #e0e0e0;
     border-bottom-color: transparent;
 }
 
-html.dark nav ul li a:hover {
+html.dark nav ul li a:hover,
+html.dark nav ul li.dropdown:hover > .nav-label {
     color: #90caf9;
     border-bottom-color: #90caf9;
 }
