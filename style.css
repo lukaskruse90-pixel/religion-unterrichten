@@ -70,7 +70,8 @@ nav ul li .nav-label {
     cursor: default;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li.dropdown:hover > .nav-label {
     color: #1a73e8;
     border-bottom: 2px solid #1a73e8;
 }
