@@ -320,6 +320,7 @@ html {
 
     .material-text {
         max-width: 100%;
+        margin-right: 0;
     }
 
     .material img.preview {
