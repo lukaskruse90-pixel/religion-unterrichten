@@ -1,3 +1,4 @@
+```javascript
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.documentElement;
 
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+
     // --------------------------------------
     // Dark Mode
     // --------------------------------------
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const systemPrefersDark = window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    // Initial Theme setzen (falls noch keine Klasse da ist)
+    // Initial Theme setzen
     if (!root.classList.contains("dark") &&
         (savedTheme === "dark" || (!savedTheme && systemPrefersDark))) {
         root.classList.add("dark");
@@ -52,26 +54,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
             const isDark = root.classList.toggle("dark");
+
             try {
                 localStorage.setItem("theme", isDark ? "dark" : "light");
             } catch (e) {
                 // wenn localStorage blockiert ist, einfach ignorieren
             }
+
             updateToggleIcon();
         });
     }
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            const isDark = root.classList.toggle("dark");
-            try {
-                localStorage.setItem("theme", isDark ? "dark" : "light");
-            } catch (e) {
-                // wenn localStorage blockiert ist, einfach ignorieren
+
+    // --------------------------------------
+    // Einleitungstext ein-/ausblenden
+    // --------------------------------------
+    const introText = document.querySelector(".intro-text");
+    const introToggle = document.querySelector(".intro-toggle");
+
+    if (introText && introToggle) {
+        introToggle.addEventListener("click", () => {
+            const isOpen = introText.classList.toggle("open");
+
+            if (isOpen) {
+                introToggle.innerHTML = 'Text ausblenden <span>↑</span>';
+            } else {
+                introToggle.innerHTML = 'Text anzeigen <span>↓</span>';
             }
-            updateToggleIcon();
         });
     }
+
 });
-    
-});
+```
