@@ -61,23 +61,5 @@ document.addEventListener("DOMContentLoaded", () => {
             updateToggleIcon();
         });
     }
-
-    // --------------------------------------
-    // Einleitungstext ein-/ausblenden
-    // --------------------------------------
-    const introText = document.querySelector(".intro-text");
-    const introToggle = document.querySelector(".intro-toggle");
-
-    if (introText && introToggle) {
-        introToggle.addEventListener("click", () => {
-            const isOpen = introText.classList.toggle("open");
-
-            if (isOpen) {
-                introToggle.innerHTML = 'Text ausblenden <span>↑</span>';
-            } else {
-                introToggle.innerHTML = 'Text anzeigen <span>↓</span>';
-            }
-        });
-    }
 });
 ```
