@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
-
     // --------------------------------------
     // Dark Mode
     // --------------------------------------
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const systemPrefersDark = window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    // Initial Theme setzen
+    // Initial Theme setzen (falls noch keine Klasse da ist)
     if (!root.classList.contains("dark") &&
         (savedTheme === "dark" || (!savedTheme && systemPrefersDark))) {
         root.classList.add("dark");
@@ -54,17 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleBtn) {
         toggleBtn.addEventListener("click", () => {
             const isDark = root.classList.toggle("dark");
-
             try {
                 localStorage.setItem("theme", isDark ? "dark" : "light");
             } catch (e) {
                 // wenn localStorage blockiert ist, einfach ignorieren
             }
-
             updateToggleIcon();
         });
     }
-
 
     // --------------------------------------
     // Einleitungstext ein-/ausblenden
@@ -83,6 +79,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
 });
 ```
