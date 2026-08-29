@@ -61,36 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    ```javascript
-    // --------------------------------------
-    // Einleitungstext ein-/ausblenden
-    // --------------------------------------
-
-    const introText = document.querySelector(".intro-text");
-    const introToggle = document.querySelector(".intro-toggle");
-
-    if (introText && introToggle) {
-        introToggle.addEventListener("click", () => {
-            const isOpen = introText.classList.toggle("open");
-
-            if (isOpen) {
-                introToggle.innerHTML = 'Text ausblenden <span>↑</span>';
-            } else {
-                introToggle.innerHTML = 'Text anzeigen <span>↓</span>';
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            const isDark = root.classList.toggle("dark");
+            try {
+                localStorage.setItem("theme", isDark ? "dark" : "light");
+            } catch (e) {
+                // wenn localStorage blockiert ist, einfach ignorieren
             }
+            updateToggleIcon();
         });
     }
-```
-
-Wichtig: **Nicht als neues `<script>` einfügen**, sondern in deine vorhandene Funktion:
-
-```javascript
-document.addEventListener("DOMContentLoaded", () => {
-    ...
-    
-    // hier einfügen
-
 });
-```
-
+    
 });
