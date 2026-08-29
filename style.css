@@ -611,3 +611,94 @@ html.dark .intro-toggle {
 html.dark .intro-toggle:hover {
     color: #90caf9;
 }
+
+/* ------------------------------------------ */
+/* Schnellzugriff                             */
+/* ------------------------------------------ */
+
+.schnellzugriff {
+    margin: 0 auto 50px auto;
+    max-width: 900px;
+}
+
+.schnellzugriff h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #222;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 8px;
+}
+
+.schnellzugriff-boxen {
+    display: flex;
+    gap: 20px;
+}
+
+.schnellzugriff-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schnellzugriff-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.schnellzugriff-box i {
+    font-size: 1.8rem;
+}
+
+.schnellzugriff-box.pdf i {
+    color: #e74c3c;
+}
+
+.schnellzugriff-box.ppp i {
+    color: #f39c12;
+}
+
+.schnellzugriff-box strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.schnellzugriff-box span {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Dark Mode */
+
+html.dark .schnellzugriff h2 {
+    color: #e8e8e8;
+    border-bottom-color: #444;
+}
+
+html.dark .schnellzugriff-box {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+html.dark .schnellzugriff-box span {
+    color: #bbbbbb;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .schnellzugriff-boxen {
+        flex-direction: column;
+    }
+}
