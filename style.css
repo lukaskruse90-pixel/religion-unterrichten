@@ -858,6 +858,7 @@ html.dark .carousel-dot.active {
     text-align: center;
     border-top: 1px solid #e3e3e3;
     border-bottom: 1px solid #e3e3e3;
+    font-size: 0.95rem;
 }
 
 .start-intro p {
@@ -867,18 +868,7 @@ html.dark .carousel-dot.active {
 
 .start-intro .leitfrage {
     margin-top: 8px;
-    font-size: 1.05rem;
     font-weight: 500;
-}
-
-.start-intro a {
-    color: #1a73e8;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.start-intro a:hover {
-    text-decoration: underline;
 }
 
 .start-intro ul {
