@@ -858,17 +858,11 @@ html.dark .carousel-dot.active {
     text-align: center;
     border-top: 1px solid #e3e3e3;
     border-bottom: 1px solid #e3e3e3;
-    font-size: 0.95rem;
 }
 
 .start-intro p {
     max-width: 850px;
     margin: 0 auto;
-}
-
-.start-intro .leitfrage {
-    margin-top: 8px;
-    font-weight: 500;
 }
 
 .start-intro ul {
@@ -882,15 +876,21 @@ html.dark .carousel-dot.active {
     margin-bottom: 6px;
 }
 
+.start-intro a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.start-intro a:hover {
+    text-decoration: underline;
+}
+
 
 /* Dark Mode */
 
 html.dark .start-intro {
     border-color: #444;
-}
-
-html.dark .start-intro .leitfrage {
-    color: #e8e8e8;
 }
 
 html.dark .start-intro a {
@@ -911,10 +911,6 @@ html.dark .start-intro a {
         max-width: 100%;
     }
 
-    .start-intro .leitfrage {
-        font-size: 1rem;
-    }
-
     .start-intro ul {
         padding-left: 20px;
         margin-top: 15px;
@@ -924,6 +920,7 @@ html.dark .start-intro a {
         margin-bottom: 8px;
     }
 }
+
 /* ------------------------------------------ */
 /* Startseite – Mobile                        */
 /* ------------------------------------------ */
