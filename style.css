@@ -1057,3 +1057,33 @@ html.dark .start-intro a:hover {
         text-align: center;
     }
 }
+
+/* ------------------------------------------ */
+/* Mobile – horizontalen Überlauf verhindern  */
+/* ------------------------------------------ */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul li,
+nav ul li a,
+nav ul li .nav-label {
+    box-sizing: border-box;
+    max-width: 100%;
+}
