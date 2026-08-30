@@ -694,3 +694,214 @@ html.dark .sammlung-hinweis {
     color: #aaa;
 }
 
+/* ------------------------------------------ */
+/* Unterrichtseinheiten – Karussell           */
+/* ------------------------------------------ */
+
+.units-carousel-section {
+    margin-top: 70px;
+}
+
+.units-carousel-section h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #222;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 8px;
+}
+
+.units-carousel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.carousel-window {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.45s ease;
+}
+
+.unit-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.unit-card-content {
+    min-height: 260px;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.unit-number {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.unit-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.unit-card p {
+    margin: 0 0 22px 0;
+    color: #555;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.unit-card a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.unit-card a:hover {
+    text-decoration: underline;
+}
+
+/* Pfeile */
+
+.carousel-arrow {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #555;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: #f2f2f2;
+    color: #1a73e8;
+    transform: scale(1.05);
+}
+
+/* Punkte */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.carousel-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #d0d0d0;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-dot.active {
+    background-color: #555;
+    transform: scale(1.35);
+}
+
+/* ------------------------------------------ */
+/* Dark Mode                                  */
+/* ------------------------------------------ */
+
+html.dark .units-carousel-section h2 {
+    color: #e8e8e8;
+    border-bottom-color: #444;
+}
+
+html.dark .unit-card {
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+html.dark .unit-number {
+    color: #aaa;
+}
+
+html.dark .unit-card h3 {
+    color: #e8e8e8;
+}
+
+html.dark .unit-card p {
+    color: #e0e0e0;
+}
+
+html.dark .unit-card a {
+    color: #90caf9;
+}
+
+html.dark .carousel-arrow {
+    background-color: #1f1f1f;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+html.dark .carousel-arrow:hover {
+    background-color: #2a2a2a;
+    color: #90caf9;
+}
+
+html.dark .carousel-dot {
+    background-color: #555;
+}
+
+html.dark .carousel-dot.active {
+    background-color: #ccc;
+}
+
+/* ------------------------------------------ */
+/* Mobile                                     */
+/* ------------------------------------------ */
+
+@media (max-width: 700px) {
+
+    .units-carousel {
+        gap: 8px;
+    }
+
+    .carousel-arrow {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .unit-card-content {
+        min-height: 280px;
+        padding: 30px 25px;
+    }
+
+    .unit-card h3 {
+        font-size: 1.25rem;
+    }
+}
