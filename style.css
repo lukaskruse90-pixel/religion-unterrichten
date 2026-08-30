@@ -1052,3 +1052,9 @@ html.dark .start-intro a:hover {
         text-align: center;
     }
 }
+
+.leitfrage {
+    margin-top: -4px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
