@@ -434,7 +434,7 @@ html.dark nav ul li.dropdown .dropdown-menu li a:hover {
     color: #90caf9;
 }
 
-html.dark .material,
+html.dark .material {
     background-color: #1f1f1f;
     box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
