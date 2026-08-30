@@ -852,32 +852,49 @@ html.dark .carousel-dot.active {
 
 .start-intro {
     width: 100vw;
-    margin-left: calc((100% - 100vw) / 2);
-    padding: 20px 40px;
+    margin-left: calc((900px - 100vw) / 2);
     box-sizing: border-box;
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
+
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+
+    padding: 18px 40px;
 }
 
 .start-intro p {
-    max-width: 1250px;
-    margin: 0 auto;
-    font-size: 0.9rem;
+    max-width: 1400px;
+    margin: 0 auto 10px auto;
+
+    color: #555;
+    font-size: 0.95rem;
     line-height: 1.6;
+    text-align: center;
 }
 
 .start-intro ul {
-    max-width: 1250px;
-    margin: 14px auto 0 auto;
-    padding-left: 110px;
-    font-size: 0.9rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 20px;
+
+    color: #555;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
 .start-intro li {
-    margin-bottom: 5px;
-    padding-left: 5px;
+    margin-bottom: 3px;
 }
+
+.start-intro li:last-child {
+    margin-bottom: 0;
+}
+
+.start-intro strong {
+    font-weight: 600;
+    color: #444;
+}
+
+/* Leitfrage */
 
 .start-intro a {
     color: #1a73e8;
@@ -889,17 +906,28 @@ html.dark .carousel-dot.active {
     text-decoration: underline;
 }
 
-
 /* Dark Mode */
 
 html.dark .start-intro {
-    border-color: #444;
+    border-color: #333333;
+}
+
+html.dark .start-intro p,
+html.dark .start-intro ul {
+    color: #ccc;
+}
+
+html.dark .start-intro strong {
+    color: #e0e0e0;
 }
 
 html.dark .start-intro a {
     color: #90caf9;
 }
 
+html.dark .start-intro a:hover {
+    text-decoration: underline;
+}
 
 /* ------------------------------------------ */
 /* Startseite – Mobile                        */
