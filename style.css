@@ -831,3 +831,35 @@ html.dark .carousel-dot.active {
         font-size: 1.25rem;
     }
 }
+
+/* ------------------------------------------ */
+/* Startseite – Informationszeile             */
+/* ------------------------------------------ */
+
+.start-intro {
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+.start-intro p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Dark Mode */
+
+html.dark .start-intro {
+    border-color: #333333;
+}
+
+html.dark .start-intro p {
+    color: #ccc;
+}
+
