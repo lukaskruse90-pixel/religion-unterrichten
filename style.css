@@ -847,53 +847,29 @@ html.dark .carousel-dot.active {
 }
 
 /* ------------------------------------------ */
-/* Start-Intro                                     */
+/* Startseite – Informationsbereich           */
 /* ------------------------------------------ */
+
 .start-intro {
     width: 100vw;
-    margin-left: calc((900px - 100vw) / 2);
+    margin-left: calc((100% - 100vw) / 2);
+    padding: 25px 20px;
     box-sizing: border-box;
-
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-
-    padding: 18px 40px;
+    text-align: center;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
 }
 
 .start-intro p {
-    max-width: 1400px;
-    margin: 0 auto 10px auto;
-
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.start-intro ul {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
-    padding-left: 20px;
-
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
 
-.start-intro li {
-    margin-bottom: 3px;
+.start-intro .leitfrage {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
 }
-
-.start-intro li:last-child {
-    margin-bottom: 0;
-}
-
-.start-intro strong {
-    font-weight: 600;
-    color: #444;
-}
-
-/* Leitfrage */
 
 .start-intro a {
     color: #1a73e8;
@@ -905,30 +881,59 @@ html.dark .carousel-dot.active {
     text-decoration: underline;
 }
 
+.start-intro ul {
+    max-width: 850px;
+    margin: 18px auto 0 auto;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.start-intro li {
+    margin-bottom: 6px;
+}
+
 
 /* Dark Mode */
 
 html.dark .start-intro {
-    border-color: #333333;
+    border-color: #444;
 }
 
-html.dark .start-intro p,
-html.dark .start-intro ul {
-    color: #ccc;
-}
-
-html.dark .start-intro strong {
-    color: #e0e0e0;
+html.dark .start-intro .leitfrage {
+    color: #e8e8e8;
 }
 
 html.dark .start-intro a {
     color: #90caf9;
 }
 
-html.dark .start-intro a:hover {
-    text-decoration: underline;
-}
 
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .start-intro {
+        padding: 20px 15px;
+    }
+
+    .start-intro p,
+    .start-intro ul {
+        max-width: 100%;
+    }
+
+    .start-intro .leitfrage {
+        font-size: 1rem;
+    }
+
+    .start-intro ul {
+        padding-left: 20px;
+        margin-top: 15px;
+    }
+
+    .start-intro li {
+        margin-bottom: 8px;
+    }
+}
 /* ------------------------------------------ */
 /* Startseite – Mobile                        */
 /* ------------------------------------------ */
