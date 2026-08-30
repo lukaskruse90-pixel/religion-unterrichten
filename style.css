@@ -832,10 +832,6 @@ html.dark .carousel-dot.active {
     }
 }
 
-/* ------------------------------------------ */
-/* Startseite – Informationszeile             */
-/* ------------------------------------------ */
-
 .start-intro {
     width: calc(100vw - 40px);
     margin-left: calc((900px - 100vw) / 2 + 20px);
@@ -845,19 +841,33 @@ html.dark .carousel-dot.active {
     border-bottom: 1px solid #e0e0e0;
 
     padding: 18px 40px;
-    text-align: center;
 }
 
 .start-intro p {
     max-width: 1400px;
-    margin: 0 auto 6px auto;
+    margin: 0 auto 10px auto;
+
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.start-intro ul {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 20px;
 
     color: #555;
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.start-intro p:last-child {
+.start-intro li {
+    margin-bottom: 3px;
+}
+
+.start-intro li:last-child {
     margin-bottom: 0;
 }
 
@@ -878,13 +888,15 @@ html.dark .carousel-dot.active {
     text-decoration: underline;
 }
 
+
 /* Dark Mode */
 
 html.dark .start-intro {
     border-color: #333333;
 }
 
-html.dark .start-intro p {
+html.dark .start-intro p,
+html.dark .start-intro ul {
     color: #ccc;
 }
 
