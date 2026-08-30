@@ -837,17 +837,21 @@ html.dark .carousel-dot.active {
 /* ------------------------------------------ */
 
 .start-intro {
-    width: 100%;
+    width: calc(100vw - 40px);
+    margin-left: calc((900px - 100vw) / 2 + 20px);
     box-sizing: border-box;
+
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
-    padding: 14px 20px;
+
+    padding: 14px 40px;
     text-align: center;
 }
 
 .start-intro p {
     max-width: 1400px;
     margin: 0 auto;
+
     color: #555;
     font-size: 0.95rem;
     line-height: 1.65;
