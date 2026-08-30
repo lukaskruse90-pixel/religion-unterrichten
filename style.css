@@ -694,21 +694,13 @@ html.dark .sammlung-hinweis {
     color: #aaa;
 }
 
+
 /* ------------------------------------------ */
 /* Unterrichtseinheiten – Karussell           */
 /* ------------------------------------------ */
 
 .units-carousel-section {
     margin-top: 70px;
-}
-
-.units-carousel-section h2 {
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #222;
-    border-bottom: 1px solid #e3e3e3;
-    padding-bottom: 8px;
 }
 
 .units-carousel {
@@ -746,19 +738,17 @@ html.dark .sammlung-hinweis {
     justify-content: center;
 }
 
-.unit-number {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #888;
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
-}
-
 .unit-card h3 {
-    margin: 0 0 14px 0;
+    margin: 0 0 6px 0;
     font-size: 1.45rem;
     font-weight: 600;
     color: #222;
+}
+
+.unit-hours {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 14px;
 }
 
 .unit-card p {
@@ -834,22 +824,17 @@ html.dark .sammlung-hinweis {
 /* Dark Mode                                  */
 /* ------------------------------------------ */
 
-html.dark .units-carousel-section h2 {
-    color: #e8e8e8;
-    border-bottom-color: #444;
-}
-
 html.dark .unit-card {
     background-color: #1f1f1f;
     box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-html.dark .unit-number {
-    color: #aaa;
-}
-
 html.dark .unit-card h3 {
     color: #e8e8e8;
+}
+
+html.dark .unit-hours {
+    color: #aaa;
 }
 
 html.dark .unit-card p {
