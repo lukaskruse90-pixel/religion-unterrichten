@@ -1058,7 +1058,7 @@ html.dark .start-intro a:hover {
 
     nav ul li.dropdown .dropdown-menu {
         position: static;
-        display: block;
+        display: none;
         width: 100%;
         min-width: 0;
         margin: 0;
