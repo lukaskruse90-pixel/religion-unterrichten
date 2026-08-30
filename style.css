@@ -1009,3 +1009,46 @@ html.dark .start-intro a:hover {
         margin-top: 14px;
     }
 }
+
+/* ------------------------------------------ */
+/* Navigation – Mobile                       */
+/* ------------------------------------------ */
+
+@media (max-width: 700px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a,
+    nav ul li .nav-label {
+        text-align: center;
+        padding: 11px 15px;
+        box-sizing: border-box;
+    }
+
+    /* Dropdowns auf dem Handy */
+    
+    nav ul li.dropdown .dropdown-menu {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    nav ul li.dropdown .dropdown-menu li a {
+        padding: 9px 15px;
+        white-space: normal;
+        text-align: center;
+    }
+}
