@@ -928,3 +928,84 @@ html.dark .start-intro a {
 html.dark .start-intro a:hover {
     text-decoration: underline;
 }
+
+/* ------------------------------------------ */
+/* Startseite – Mobile                        */
+/* ------------------------------------------ */
+
+@media (max-width: 700px) {
+
+    /* Informationszeile */
+
+    .start-intro {
+        width: 100vw;
+        margin-left: calc((100% - 100vw) / 2);
+        padding: 16px 20px;
+    }
+
+    .start-intro p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .start-intro ul {
+        padding-left: 18px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+
+    /* Karussell */
+
+    .units-carousel-section {
+        margin-top: 35px;
+    }
+
+    .units-carousel {
+        gap: 6px;
+    }
+
+    .carousel-window {
+        border-radius: 10px;
+    }
+
+    .unit-card {
+        border-radius: 10px;
+    }
+
+    .unit-card-content {
+        min-height: 260px;
+        padding: 28px 22px;
+    }
+
+    .unit-card h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .unit-hours {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .unit-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    /* Pfeile */
+
+    .carousel-arrow {
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    /* Punkte */
+
+    .carousel-dots {
+        margin-top: 14px;
+    }
+}
