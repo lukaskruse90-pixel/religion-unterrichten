@@ -557,11 +557,14 @@ html.dark .intro-toggle:hover {
     max-width: 900px;
 }
 
-.materialsammlung h2 {
-    font-size: 1.35rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #222;
+.materialsammlung h2 { 
+    font-size: 1.35rem; 
+    font-weight: 600; 
+    margin-top: 0;
+    margin-bottom: 25px; 
+    color: #222; 
+    border-bottom: 1px solid #e3e3e3; 
+    padding-bottom: 8px; 
 }
 
 .sammlung-links {
