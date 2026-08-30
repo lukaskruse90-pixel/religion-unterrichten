@@ -831,3 +831,57 @@ html.dark .carousel-dot.active {
         font-size: 1.25rem;
     }
 }
+
+/* ------------------------------------------ */
+/* Startseite – Informationszeile             */
+/* ------------------------------------------ */
+
+.start-intro {
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+.start-intro p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* Leitfrage als dezenter PDF-Link */
+
+.start-intro a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #bbb;
+    text-underline-offset: 3px;
+}
+
+.start-intro a:hover {
+    color: #1a73e8;
+    text-decoration-color: #1a73e8;
+}
+
+/* Dark Mode */
+
+html.dark .start-intro {
+    border-color: #333333;
+}
+
+html.dark .start-intro p {
+    color: #ccc;
+}
+
+html.dark .start-intro a {
+    text-decoration-color: #666;
+}
+
+html.dark .start-intro a:hover {
+    color: #90caf9;
+    text-decoration-color: #90caf9;
+}
