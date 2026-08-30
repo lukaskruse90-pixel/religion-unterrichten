@@ -930,14 +930,16 @@ html.dark .start-intro a:hover {
 }
 
 /* ------------------------------------------ */
-/* Startseite – Mobile                        */
+/* Mobile                                     */
 /* ------------------------------------------ */
 
 @media (max-width: 700px) {
 
+    /* Startseite – Informationsbereich */
+
     .start-intro {
-        width: 100vw;
-        margin-left: calc((100% - 100vw) / 2);
+        width: 100%;
+        margin-left: 0;
         padding: 16px 20px;
         box-sizing: border-box;
     }
@@ -945,6 +947,7 @@ html.dark .start-intro a:hover {
     .start-intro p {
         font-size: 0.9rem;
         line-height: 1.55;
+        text-align: center;
     }
 
     .start-intro ul {
@@ -958,7 +961,7 @@ html.dark .start-intro a:hover {
         margin-bottom: 7px;
         padding-left: 2px;
     }
-}
+
 
     /* Karussell */
 
@@ -999,6 +1002,7 @@ html.dark .start-intro a:hover {
         margin-bottom: 18px;
     }
 
+
     /* Pfeile */
 
     .carousel-arrow {
@@ -1008,42 +1012,57 @@ html.dark .start-intro a:hover {
         font-size: 0.85rem;
     }
 
+
     /* Punkte */
 
     .carousel-dots {
         margin-top: 14px;
     }
-}
 
-/* ------------------------------------------ */
-/* Navigation – Mobile                       */
-/* ------------------------------------------ */
 
-@media (max-width: 700px) {
+    /* Navigation */
+
+    nav {
+        width: 100%;
+        overflow: visible;
+    }
 
     nav ul {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     nav ul li {
+        display: block;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     nav ul li a,
     nav ul li .nav-label {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
         text-align: center;
         padding: 11px 15px;
-        box-sizing: border-box;
     }
 
+
     /* Dropdowns auf dem Handy */
-    
+
     nav ul li.dropdown .dropdown-menu {
         position: static;
+        display: block;
         width: 100%;
         min-width: 0;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
         border-left: none;
         border-right: none;
@@ -1051,10 +1070,15 @@ html.dark .start-intro a:hover {
         box-shadow: none;
     }
 
+    nav ul li.dropdown .dropdown-menu li {
+        width: 100%;
+    }
+
     nav ul li.dropdown .dropdown-menu li a {
+        width: 100%;
+        box-sizing: border-box;
         padding: 9px 15px;
         white-space: normal;
         text-align: center;
     }
 }
-
