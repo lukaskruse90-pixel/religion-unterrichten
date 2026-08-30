@@ -844,17 +844,26 @@ html.dark .carousel-dot.active {
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 
-    padding: 14px 40px;
+    padding: 18px 40px;
     text-align: center;
 }
 
 .start-intro p {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 6px auto;
 
     color: #555;
     font-size: 0.95rem;
-    line-height: 1.65;
+    line-height: 1.6;
+}
+
+.start-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.start-intro strong {
+    font-weight: 600;
+    color: #444;
 }
 
 /* Leitfrage */
@@ -877,6 +886,10 @@ html.dark .start-intro {
 
 html.dark .start-intro p {
     color: #ccc;
+}
+
+html.dark .start-intro strong {
+    color: #e0e0e0;
 }
 
 html.dark .start-intro a {
