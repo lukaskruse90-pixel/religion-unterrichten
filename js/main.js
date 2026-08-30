@@ -78,4 +78,78 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+        // --------------------------------------
+    // Unterrichtseinheiten – Karussell
+    // --------------------------------------
+
+    const carouselTrack = document.querySelector(".carousel-track");
+    const carouselPrev = document.querySelector(".carousel-prev");
+    const carouselNext = document.querySelector(".carousel-next");
+    const carouselDots = document.querySelector(".carousel-dots");
+    const unitCards = document.querySelectorAll(".unit-card");
+
+    if (
+        carouselTrack &&
+        carouselPrev &&
+        carouselNext &&
+        carouselDots &&
+        unitCards.length > 0
+    ) {
+        let currentSlide = 0;
+
+        // Punkte erzeugen
+        unitCards.forEach((_, index) => {
+            const dot = document.createElement("button");
+
+            dot.className = "carousel-dot";
+            dot.type = "button";
+            dot.setAttribute(
+                "aria-label",
+                `Unterrichtseinheit ${index + 1} anzeigen`
+            );
+
+            dot.addEventListener("click", () => {
+                showSlide(index);
+            });
+
+            carouselDots.appendChild(dot);
+        });
+
+        const dots = carouselDots.querySelectorAll(".carousel-dot");
+
+        function showSlide(index) {
+            if (index < 0) {
+                index = unitCards.length - 1;
+            }
+
+            if (index >= unitCards.length) {
+                index = 0;
+            }
+
+            currentSlide = index;
+
+            carouselTrack.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
+
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle(
+                    "active",
+                    dotIndex === currentSlide
+                );
+            });
+        }
+
+        carouselPrev.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+        });
+
+        carouselNext.addEventListener("click", () => {
+            showSlide(currentSlide + 1);
+        });
+
+        // Erste Karte anzeigen
+        showSlide(0);
+    }
+    
 });
