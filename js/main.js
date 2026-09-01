@@ -79,77 +79,59 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-        // --------------------------------------
-    // Unterrichtseinheiten – Karussell
-    // --------------------------------------
+// --------------------------------------
+// Startseite – Bild-Karussell
+// --------------------------------------
 
-    const carouselTrack = document.querySelector(".carousel-track");
-    const carouselPrev = document.querySelector(".carousel-prev");
-    const carouselNext = document.querySelector(".carousel-next");
-    const carouselDots = document.querySelector(".carousel-dots");
-    const unitCards = document.querySelectorAll(".unit-card");
+const carouselTrack = document.querySelector(".carousel-track");
+const carouselPrev = document.querySelector(".carousel-prev");
+const carouselNext = document.querySelector(".carousel-next");
 
-    if (
-        carouselTrack &&
-        carouselPrev &&
-        carouselNext &&
-        carouselDots &&
-        unitCards.length > 0
-    ) {
-        let currentSlide = 0;
+if (carouselTrack && carouselPrev && carouselNext) {
 
-        // Punkte erzeugen
-        unitCards.forEach((_, index) => {
-            const dot = document.createElement("button");
+    let slides = Array.from(
+        carouselTrack.querySelectorAll(".teaser-slide")
+    );
 
-            dot.className = "carousel-dot";
-            dot.type = "button";
-            dot.setAttribute(
-                "aria-label",
-                `Unterrichtseinheit ${index + 1} anzeigen`
-            );
+    let currentSlide = 0;
 
-            dot.addEventListener("click", () => {
-                showSlide(index);
-            });
+    // Fisher-Yates-Shuffle:
+    // erzeugt bei jedem Seitenaufruf eine zufällige Reihenfolge
+    for (let i = slides.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slides[i], slides[j]] = [slides[j], slides[i]];
+    }
 
-            carouselDots.appendChild(dot);
-        });
+    // Gemischte Reihenfolge ins DOM übernehmen
+    slides.forEach(slide => {
+        carouselTrack.appendChild(slide);
+    });
 
-        const dots = carouselDots.querySelectorAll(".carousel-dot");
+    function showSlide(index) {
 
-        function showSlide(index) {
-            if (index < 0) {
-                index = unitCards.length - 1;
-            }
-
-            if (index >= unitCards.length) {
-                index = 0;
-            }
-
-            currentSlide = index;
-
-            carouselTrack.style.transform =
-                `translateX(-${currentSlide * 100}%)`;
-
-            dots.forEach((dot, dotIndex) => {
-                dot.classList.toggle(
-                    "active",
-                    dotIndex === currentSlide
-                );
-            });
+        if (index < 0) {
+            index = slides.length - 1;
         }
 
-        carouselPrev.addEventListener("click", () => {
-            showSlide(currentSlide - 1);
-        });
+        if (index >= slides.length) {
+            index = 0;
+        }
 
-        carouselNext.addEventListener("click", () => {
-            showSlide(currentSlide + 1);
-        });
+        currentSlide = index;
 
-        // Erste Karte anzeigen
-        showSlide(0);
+        carouselTrack.style.transform =
+            `translateX(-${currentSlide * 100}%)`;
     }
+
+    carouselPrev.addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+    });
+
+    carouselNext.addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+    });
+
+    showSlide(0);
+}
     
 });
