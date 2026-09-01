@@ -658,12 +658,14 @@ html.dark .sammlung-hinweis {
 .units-carousel {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 18px;
     width: 100%;
 }
 
 .carousel-window {
-    flex: 1;
+    flex: 0 1 600px;
+    max-width: 600px;
     overflow: hidden;
     border-radius: 14px;
 }
