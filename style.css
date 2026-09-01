@@ -1088,8 +1088,18 @@ html.dark .carousel-hint {
         white-space: normal;
         text-align: center;
     }
-}
 
+    /* Dropdown per Tippen öffnen */
+
+    nav ul li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    nav ul li.dropdown:has(.dropdown-menu > li) > .nav-label {
+        cursor: pointer;
+    }
+
+}
 
 /* ========================================== */
 /* Sehr kleine Bildschirme                    */
