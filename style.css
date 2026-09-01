@@ -647,9 +647,8 @@ html.dark .sammlung-hinweis {
     color: #aaa;
 }
 
-
 /* ------------------------------------------ */
-/* Unterrichtseinheiten – Karussell           */
+/* Startseite – Bild-Karussell                */
 /* ------------------------------------------ */
 
 .units-carousel-section {
@@ -666,7 +665,7 @@ html.dark .sammlung-hinweis {
 .carousel-window {
     flex: 1;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
 .carousel-track {
@@ -674,53 +673,28 @@ html.dark .sammlung-hinweis {
     transition: transform 0.45s ease;
 }
 
-.unit-card {
+.teaser-slide {
     min-width: 100%;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border: 1px solid #eeeeee;
-}
-
-.unit-card-content {
-    min-height: 260px;
-    padding: 40px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.unit-card h3 {
-    margin: 0 0 6px 0;
-    font-size: 1.45rem;
-    font-weight: 600;
-    color: #222;
-}
-
-.unit-hours {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 14px;
-}
-
-.unit-card p {
-    margin: 0 0 22px 0;
-    color: #555;
-    max-width: 650px;
-    line-height: 1.7;
-}
-
-.unit-card a {
-    color: #1a73e8;
+    display: block;
+    overflow: hidden;
+    border-radius: 14px;
     text-decoration: none;
-    font-weight: 500;
-    align-self: flex-start;
 }
 
-.unit-card a:hover {
-    text-decoration: underline;
+.teaser-slide img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 14px;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+.teaser-slide:hover img {
+    transform: scale(1.015);
+    filter: brightness(0.94);
 }
 
 /* Pfeile */
@@ -738,9 +712,10 @@ html.dark .sammlung-hinweis {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .carousel-arrow:hover {
@@ -749,56 +724,7 @@ html.dark .sammlung-hinweis {
     transform: scale(1.05);
 }
 
-/* Punkte */
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 18px;
-}
-
-.carousel-dot {
-    width: 7px;
-    height: 7px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background-color: #d0d0d0;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.carousel-dot.active {
-    background-color: #555;
-    transform: scale(1.35);
-}
-
-/* ------------------------------------------ */
-/* Dark Mode                                  */
-/* ------------------------------------------ */
-
-html.dark .unit-card {
-    background-color: #1f1f1f;
-    border-color: #333333;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-}
-
-html.dark .unit-card h3 {
-    color: #e8e8e8;
-}
-
-html.dark .unit-hours {
-    color: #aaa;
-}
-
-html.dark .unit-card p {
-    color: #e0e0e0;
-}
-
-html.dark .unit-card a {
-    color: #90caf9;
-}
+/* Dark Mode */
 
 html.dark .carousel-arrow {
     background-color: #1f1f1f;
@@ -811,38 +737,29 @@ html.dark .carousel-arrow:hover {
     color: #90caf9;
 }
 
-html.dark .carousel-dot {
-    background-color: #555;
-}
-
-html.dark .carousel-dot.active {
-    background-color: #ccc;
-}
-
-/* ------------------------------------------ */
-/* Mobile                                     */
-/* ------------------------------------------ */
+/* Mobile */
 
 @media (max-width: 700px) {
 
+    .units-carousel-section {
+        margin-top: 35px;
+    }
+
     .units-carousel {
-        gap: 8px;
+        gap: 6px;
+    }
+
+    .carousel-window,
+    .teaser-slide,
+    .teaser-slide img {
+        border-radius: 10px;
     }
 
     .carousel-arrow {
-        flex: 0 0 34px;
-        width: 34px;
-        height: 34px;
-        font-size: 0.9rem;
-    }
-
-    .unit-card-content {
-        min-height: 280px;
-        padding: 30px 25px;
-    }
-
-    .unit-card h3 {
-        font-size: 1.25rem;
+        flex: 0 0 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
     }
 }
 
