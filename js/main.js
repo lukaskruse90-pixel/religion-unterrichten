@@ -25,10 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Modal über das X schließen
         closeBtn.addEventListener("click", closeModal);
 
+        // Modal durch Klick auf den Hintergrund schließen
         modal.addEventListener("click", (event) => {
             if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Modal mit Escape schließen
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
                 closeModal();
             }
         });
@@ -107,6 +116,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 : 'Text anzeigen <span>↓</span>';
         });
     }
+
+
+    // ======================================
+    // Mobile Navigation
+    // ======================================
+
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+
+    dropdowns.forEach((dropdown) => {
+        const label = dropdown.querySelector(".nav-label");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        // Leere Dropdowns wie Klassenstufe 10 oder 12–13 ignorieren
+        if (!label || !menu || menu.children.length === 0) {
+            return;
+        }
+
+        label.addEventListener("click", () => {
+            if (window.innerWidth <= 700) {
+                dropdown.classList.toggle("open");
+            }
+        });
+    });
 
 
     // ======================================
