@@ -118,8 +118,10 @@ nav ul li.dropdown .dropdown-menu {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-nav ul li.dropdown:hover .dropdown-menu {
-    display: block;
+@media (hover: hover) and (pointer: fine) {
+    nav ul li.dropdown:hover .dropdown-menu {
+        display: block;
+    }
 }
 
 nav ul li.dropdown .dropdown-menu li {
