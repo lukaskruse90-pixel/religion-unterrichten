@@ -664,8 +664,8 @@ html.dark .sammlung-hinweis {
 }
 
 .carousel-window {
-    flex: 0 1 600px;
-    max-width: 600px;
+    flex: 0 1 520px;
+    max-width: 520px;
     overflow: hidden;
     border-radius: 14px;
 }
