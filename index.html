@@ -3,304 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Religionsunterricht</title>
+
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Dark-Mode möglichst früh setzen, um Flackern zu vermeiden -->
-<script>
-(function() {
-    try {
-        var root = document.documentElement;
-        var savedTheme = localStorage.getItem("theme");
-        var systemPrefersDark = window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-            root.classList.add("dark");
-        }
-    } catch (e) {
-        // Wenn localStorage blockiert ist, einfach nichts tun
-    }
-})();
-</script>
+    <!-- Dark Mode möglichst früh setzen, um Flackern zu vermeiden -->
+    <script>
+        (function() {
+            try {
+                var root = document.documentElement;
+                var savedTheme = localStorage.getItem("theme");
+                var systemPrefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> 
-</head> 
-<body> 
-<header> 
-    <a href="/" class="logo"> 
-        <span class="logo-main">Religionsunterricht</span> 
-        <span class="logo-sub">reflexiv</span> 
-    </a> 
- 
-    <button id="themeToggle" class="theme-toggle" aria-label="Dark Mode umschalten"> 
-        🌙 
-    </button> 
-     
-</header> 
- 
-<nav>
-  <ul>
+                if (
+                    savedTheme === "dark" ||
+                    (!savedTheme && systemPrefersDark)
+                ) {
+                    root.classList.add("dark");
+                }
+            } catch (e) {
+                // Wenn localStorage blockiert ist, einfach nichts tun
+            }
+        })();
+    </script>
 
-    <li class="dropdown">
-      <span class="nav-label">Klassenstufe 10</span>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
 
-      <ul class="dropdown-menu">
-        <!-- Später: Unterrichtseinheiten zu konkreten Religionen -->
-      </ul>
-    </li>
+<body>
 
-    <li class="dropdown">
-      <span class="nav-label">Klassenstufe 11</span>
+<header>
+    <a href="/" class="logo">
+        <span class="logo-main">Religionsunterricht</span>
+        <span class="logo-sub">reflexiv</span>
+    </a>
 
-      <ul class="dropdown-menu">
-        <li><a href="/unterrichtseinheiten/funktionalitaet-von-religion/">Funktionalität von Religion</a></li>
-        <li><a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">Dysfunktionalität von Religion</a></li>
-        <li><a href="/unterrichtseinheiten/gottesbeweise/">Gottesbeweise</a></li>
-        <li><a href="/unterrichtseinheiten/theodizee/">Theodizee</a></li>
-        <li><a href="/unterrichtseinheiten/religionstheologie/">Religionstheologie</a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown">
-      <span class="nav-label">Klassenstufe 12–13</span>
-
-      <ul class="dropdown-menu">
-        <!-- Später: Vertiefungsthemen -->
-      </ul>
-    </li>
-
-  </ul>
-</nav>
- 
-<main> 
-
-<!-- Einführung -->
-
-<div class="start-intro">
-
-  <p>
-    Auf dieser Website finden Sie Unterrichtsmaterialien zur Auseinandersetzung mit der
-    <a href="/pdfs/leitfrage.pdf">Leitfrage</a>:
-    „Ist Religion epistemisch rechtfertigbar und funktional verantwortbar?“
-  </p>
-
-  <ul>
-    <li>
-      <strong>Klassenstufe 10</strong> (Voraussetzung):
-      Hermeneutisch-reflektierte Erschließung verschiedener Religionen
-    </li>
-    <li>
-      <strong>Klassenstufe 11</strong> (Anwendung):
-      Reflexion der Funktionalität von Religion und der Wahrheitsfrage
-    </li>
-    <li>
-      <strong>Klassenstufen 12–13</strong> (Vertiefung):
-      Auseinandersetzung mit ausgewählten Themen und Fragestellungen
-    </li>
-  </ul>
-
-</div>
-    
-<section class="units-carousel-section">
-
-  <div class="units-carousel">
-      
-    <button class="carousel-arrow carousel-prev" type="button"
-            aria-label="Vorheriges Bild">
-      &#10094;
+    <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Dark Mode umschalten"
+    >
+        🌙
     </button>
+</header>
 
-    <div class="carousel-window">
-      <div class="carousel-track">
 
-        <a class="teaser-slide"
-           href="/unterrichtseinheiten/funktionalitaet-von-religion/#was-ist-religion">
-          <img
-            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/1-was-ist-religion.png"
-            alt="Zur Doppelstunde Was ist Religion?"
-          >
-        </a>
+<nav>
+    <ul>
 
-        <a class="teaser-slide"
-           href="/unterrichtseinheiten/funktionalitaet-von-religion/#interdependenz-der-funktionen">
-          <img
-            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/2-interdependenz-der-funktionen.png"
-            alt="Zur Doppelstunde Die Interdependenz der Funktionen"
-          >
-        </a>
+        <li class="dropdown">
+            <span class="nav-label">Klassenstufe 10</span>
 
-        <a class="teaser-slide"
-           href="/unterrichtseinheiten/funktionalitaet-von-religion/#perspektiven-auf-religion">
-          <img
-            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/3-perspektiven-auf-religion.png"
-            alt="Zur Doppelstunde Welche Perspektiven gibt es auf Religion?"
-          >
-        </a>
-<!-- 4 – Ricœur -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/funktionalitaet-von-religion/#ricoeur-selbstverstaendnis"
-  aria-label="Zur Doppelstunde Das Symbol gibt zu denken"
->
-  <img
-    src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/4-ricoeur-selbstverstaendnis.png"
-    alt=""
-  >
-</a>
+            <ul class="dropdown-menu">
+                <!-- Später: Unterrichtseinheiten zu konkreten Religionen -->
+            </ul>
+        </li>
 
-<!-- 5 – Drewermann -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/funktionalitaet-von-religion/#drewermann-individuation"
-  aria-label="Zur Doppelstunde Von der Angst zum Menschsein"
->
-  <img
-    src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/5-drewermann-individuation.png"
-    alt=""
-  >
-</a>
+        <li class="dropdown">
+            <span class="nav-label">Klassenstufe 11</span>
 
-<!-- 6 – Habermas -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/funktionalitaet-von-religion/#habermas-semantisches-potenzial"
-  aria-label="Zur Doppelstunde Religion als Ressource moderner Gesellschaft"
->
-  <img
-    src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/6-habermas-semantisches-potenzial.png"
-    alt=""
-  >
-</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
+                        Funktionalität von Religion
+                    </a>
+                </li>
 
-<!-- ====================================== -->
-<!-- Dysfunktionalität von Religion         -->
-<!-- ====================================== -->
+                <li>
+                    <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
+                        Dysfunktionalität von Religion
+                    </a>
+                </li>
 
-<!-- 8 – Feuerbach: Projektionstheorie -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#feuerbach-projektionstheorie"
-  aria-label="Zur Doppelstunde Gott – eine Projektion des Menschen?"
->
-  <img
-    src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/1-feuerbachs-projektionstheorie.png"
-    alt=""
-  >
-</a>
+                <li>
+                    <a href="/unterrichtseinheiten/gottesbeweise/">
+                        Gottesbeweise
+                    </a>
+                </li>
 
-<!-- 9 – Feuerbach: Religionskritik -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#feuerbach-religionskritik"
-  aria-label="Zur Doppelstunde Warum der Himmel uns die Erde kostet"
->
-  <img
-    src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/2-feuerbachs-religionskritik.png"
-    alt=""
-  >
-</a>
+                <li>
+                    <a href="/unterrichtseinheiten/theodizee/">
+                        Theodizee
+                    </a>
+                </li>
 
-<!-- 10 – Freud: Projektionstheorie -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#freud-projektionstheorie"
-  aria-label="Zur Doppelstunde Gott – nichts anderes als ein erhöhter Vater?"
->
-  <img
-    src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/3-freuds-projektionstheorie.png"
-    alt=""
-  >
-</a>
+                <li>
+                    <a href="/unterrichtseinheiten/religionstheologie/">
+                        Religionstheologie
+                    </a>
+                </li>
+            </ul>
+        </li>
 
-<!-- 11 – Freud: Religionskritik -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#freud-religionskritik"
-  aria-label="Zur Doppelstunde Die Welt ist keine Kinderstube"
->
-  <img
-    src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/4-freuds-religionskritik.png"
-    alt=""
-  >
-</a>
+        <li class="dropdown">
+            <span class="nav-label">Klassenstufe 12–13</span>
 
-<!-- 12 – Marx -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#marx-religionskritik"
-  aria-label="Zur Doppelstunde Religion – Opium des Volks?"
->
-  <img
-    src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/5-marx-religionskritik.png"
-    alt=""
-  >
-</a>
+            <ul class="dropdown-menu">
+                <!-- Später: Vertiefungsthemen -->
+            </ul>
+        </li>
 
-<!-- ====================================== -->
-<!-- Religionstheologie                     -->
-<!-- ====================================== -->
+    </ul>
+</nav>
 
-<!-- Christliche Religionstheologie -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/religionstheologie/#christliche-religionstheologie"
-  aria-label="Zur Doppelstunde Wie beurteilt das Christentum andere Religionen?"
->
-  <img
-    src="/unterrichtseinheiten/religionstheologie/bilder/1-christliche-religionstheologie.png"
-    alt=""
-  >
-</a>
 
-<!-- Funktionale Implikationen -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/religionstheologie/#funktionale-implikationen"
-  aria-label="Zur Doppelstunde Welche funktionalen Implikationen haben die Positionen?"
->
-  <img
-    src="/unterrichtseinheiten/religionstheologie/bilder/2-funktionale-implikationen-religionstheologischer-positionen.png"
-    alt=""
-  >
-</a>
+<main>
 
-<!-- Epistemisches Patt -->
-<a
-  class="teaser-slide"
-  href="/unterrichtseinheiten/religionstheologie/#epistemisches-patt"
-  aria-label="Zur Doppelstunde Welche Antwort auf das epistemische Patt überzeugt?"
->
-  <img
-    src="/unterrichtseinheiten/religionstheologie/bilder/3-epistemisches-patt.png"
-    alt=""
-  >
-</a>
+    <!-- ====================================== -->
+    <!-- Einführung                            -->
+    <!-- ====================================== -->
 
-         
-      </div>
+    <div class="start-intro">
+
+        <p>
+            Auf dieser Website finden Sie Unterrichtsmaterialien zur
+            Auseinandersetzung mit der
+            <a href="/pdfs/leitfrage.pdf">Leitfrage</a>:
+            „Ist Religion epistemisch rechtfertigbar und funktional verantwortbar?“
+        </p>
+
+        <ul>
+            <li>
+                <strong>Klassenstufe 10</strong> (Voraussetzung):
+                Hermeneutisch-reflektierte Erschließung verschiedener Religionen
+            </li>
+
+            <li>
+                <strong>Klassenstufe 11</strong> (Anwendung):
+                Reflexion der Funktionalität von Religion und der Wahrheitsfrage
+            </li>
+
+            <li>
+                <strong>Klassenstufen 12–13</strong> (Vertiefung):
+                Auseinandersetzung mit ausgewählten Themen und Fragestellungen
+            </li>
+        </ul>
+
     </div>
 
-    <button class="carousel-arrow carousel-next" type="button"
-            aria-label="Nächstes Bild">
-      &#10095;
-    </button>
 
-  </div>
-     
-    <p class="carousel-hint">
-  Neugierig geworden? Ein Klick auf das Bild führt direkt zur Doppelstunde.
-</p>
-    
-</section>
-    
-</main> 
- 
-<footer> 
-    &copy; 2025 Religionsunterricht 
-</footer> 
- 
- <script src="/js/main.js"></script> 
-     
-</body> 
+    <!-- ====================================== -->
+    <!-- Teaser-Karussell                      -->
+    <!-- ====================================== -->
+
+    <section class="units-carousel-section">
+
+        <div class="units-carousel">
+
+            <button
+                class="carousel-arrow carousel-prev"
+                type="button"
+                aria-label="Vorherige Doppelstunde"
+            >
+                &#10094;
+            </button>
+
+
+            <div class="carousel-window">
+
+                <div class="carousel-track">
+
+
+                    <!-- ====================================== -->
+                    <!-- Funktionalität von Religion            -->
+                    <!-- ====================================== -->
+
+                    <!-- Was ist Religion? -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#was-ist-religion"
+                        aria-label="Zur Doppelstunde Was ist Religion?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/1-was-ist-religion.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Interdependenz der Funktionen -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#interdependenz-der-funktionen"
+                        aria-label="Zur Doppelstunde Die Interdependenz der Funktionen"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/2-interdependenz-der-funktionen.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Perspektiven auf Religion -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#perspektiven-auf-religion"
+                        aria-label="Zur Doppelstunde Welche Perspektiven gibt es auf Religion?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/3-perspektiven-auf-religion.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Ricœur -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#ricoeur-selbstverstaendnis"
+                        aria-label="Zur Doppelstunde Das Symbol gibt zu denken"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/4-ricoeur-selbstverstaendnis.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Drewermann -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#drewermann-individuation"
+                        aria-label="Zur Doppelstunde Von der Angst zum Menschsein"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/5-drewermann-individuation.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Habermas -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/funktionalitaet-von-religion/#habermas-semantisches-potenzial"
+                        aria-label="Zur Doppelstunde Religion als Ressource moderner Gesellschaft"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/funktionalitaet-von-religion/bilder/6-habermas-semantisches-potenzial.png"
+                            alt=""
+                        >
+                    </a>
+
+
+
+                    <!-- ====================================== -->
+                    <!-- Dysfunktionalität von Religion         -->
+                    <!-- ====================================== -->
+
+                    <!-- Feuerbach: Projektionstheorie -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#feuerbach-projektionstheorie"
+                        aria-label="Zur Doppelstunde Gott – eine Projektion des Menschen?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/1-feuerbachs-projektionstheorie.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Feuerbach: Religionskritik -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#feuerbach-religionskritik"
+                        aria-label="Zur Doppelstunde Warum der Himmel uns die Erde kostet"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/2-feuerbachs-religionskritik.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Freud: Projektionstheorie -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#freud-projektionstheorie"
+                        aria-label="Zur Doppelstunde Gott – nichts anderes als ein erhöhter Vater?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/3-freuds-projektionstheorie.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Freud: Religionskritik -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#freud-religionskritik"
+                        aria-label="Zur Doppelstunde Die Welt ist keine Kinderstube"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/4-freuds-religionskritik.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Marx -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/#marx-religionskritik"
+                        aria-label="Zur Doppelstunde Religion – Opium des Volks?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/dysfunktionalitaet-von-religion/bilder/5-marx-religionskritik.png"
+                            alt=""
+                        >
+                    </a>
+
+
+
+                    <!-- ====================================== -->
+                    <!-- Religionstheologie                     -->
+                    <!-- ====================================== -->
+
+                    <!-- Christliche Religionstheologie -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/religionstheologie/#christliche-religionstheologie"
+                        aria-label="Zur Doppelstunde Wie beurteilt das Christentum andere Religionen?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/religionstheologie/bilder/1-christliche-religionstheologie.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Funktionale Implikationen -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/religionstheologie/#funktionale-implikationen"
+                        aria-label="Zur Doppelstunde Welche funktionalen Implikationen haben die Positionen?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/religionstheologie/bilder/2-funktionale-implikationen-religionstheologischer-positionen.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                    <!-- Epistemisches Patt -->
+                    <a
+                        class="teaser-slide"
+                        href="/unterrichtseinheiten/religionstheologie/#epistemisches-patt"
+                        aria-label="Zur Doppelstunde Welche Antwort auf das epistemische Patt überzeugt?"
+                    >
+                        <img
+                            src="/unterrichtseinheiten/religionstheologie/bilder/3-epistemisches-patt.png"
+                            alt=""
+                        >
+                    </a>
+
+
+                </div>
+            </div>
+
+
+            <button
+                class="carousel-arrow carousel-next"
+                type="button"
+                aria-label="Nächste Doppelstunde"
+            >
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <p class="carousel-hint">
+            Neugierig geworden? Ein Klick auf das Bild führt direkt zur Doppelstunde.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    &copy; 2026 Religionsunterricht
+</footer>
+
+
+<script src="/js/main.js"></script>
+
+</body>
 </html>
