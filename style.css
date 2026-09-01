@@ -672,7 +672,12 @@ html.dark .sammlung-hinweis {
 
 .carousel-track {
     display: flex;
-    transition: transform 0.45s ease;
+    transition: transform 0.45s ease, opacity 0.15s ease;
+    opacity: 0;
+}
+
+.carousel-track.ready {
+    opacity: 1;
 }
 
 .teaser-slide {
