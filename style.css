@@ -765,6 +765,17 @@ html.dark .carousel-arrow:hover {
     }
 }
 
+.carousel-hint {
+    margin: 14px 0 0;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #888;
+}
+
+html.dark .carousel-hint {
+    color: #aaa;
+}
+
 /* ------------------------------------------ */
 /* Startseite – Informationsbereich           */
 /* ------------------------------------------ */
