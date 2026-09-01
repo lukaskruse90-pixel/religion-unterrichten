@@ -132,6 +132,7 @@ if (carouselTrack && carouselPrev && carouselNext) {
     });
 
     showSlide(0);
+    carouselTrack.classList.add("ready");
 }
     
 });
