@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Impressum – Religionsunterricht</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script>
+        try {
+            const savedTheme = localStorage.getItem("theme");
+            const systemPrefersDark =
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            if (
+                savedTheme === "dark" ||
+                (!savedTheme && systemPrefersDark)
+            ) {
+                document.documentElement.classList.add("dark");
+            }
+        } catch (e) {
+            // Wenn localStorage blockiert ist, einfach ignorieren
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <span class="logo-main">Religionsunterricht</span>
+            <span class="logo-sub">reflexiv</span>
+        </a>
+
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Darstellung wechseln"
+        >
+            🌙
+        </button>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <span class="nav-label">Klassenstufe 10</span>
+                <ul class="dropdown-menu">
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="nav-label">Klassenstufe 11</span>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
+                            Funktionalität von Religion
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unterrichtseinheiten/dysfunktionalitaet-von-religion/">
+                            Dysfunktionalität von Religion
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unterrichtseinheiten/gottesbeweise/">
+                            Gottesbeweise
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unterrichtseinheiten/theodizee/">
+                            Theodizee
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/unterrichtseinheiten/religionstheologie/">
+                            Religionstheologie
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <span class="nav-label">Klassenstufe 12–13</span>
+                <ul class="dropdown-menu">
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <main>
+
+        <h1>Impressum</h1>
+
+        <section class="kategorie">
+            <h2>Angaben zum Anbieter</h2>
+
+            <p>
+                [Vorname Nachname]<br>
+                [Straße Hausnummer]<br>
+                [PLZ Ort]<br>
+                Deutschland
+            </p>
+
+            <p>
+                <strong>E-Mail:</strong>
+                <a href="mailto:[E-Mail-Adresse]">[E-Mail-Adresse]</a>
+            </p>
+        </section>
+
+    </main>
+
+
+    <footer>
+        &copy; 2026 Religionsunterricht ·
+        <a href="/impressum/">Impressum</a>
+    </footer>
+
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>
