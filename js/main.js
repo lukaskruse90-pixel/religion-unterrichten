@@ -140,7 +140,79 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // ======================================
+    // Klausuren – Passwortschutz
+    // ======================================
+    
+    const klausurBereiche = document.querySelectorAll(".klausuren");
+    const klausurPasswort = "refru";
+    const klausurSessionKey = "klausurenFreigeschaltet";
 
+    let klausurenFreigeschaltet = false;
+
+    try {
+        klausurenFreigeschaltet =
+            sessionStorage.getItem(klausurSessionKey) === "true";
+    } catch (e) {}
+
+    function zeigeKlausurmaterial(bereich) {
+        const login = bereich.querySelector(".klausur-login");
+        const material = bereich.querySelector(".klausur-material");
+        const fehler = bereich.querySelector(".klausur-fehler");
+
+        if (login) {
+            login.style.display = "none";
+        }
+
+        if (material) {
+            material.style.display = "flex";
+        }
+
+        if (fehler) {
+            fehler.style.display = "none";
+        }
+    }
+
+    klausurBereiche.forEach((bereich) => {
+        const eingabe = bereich.querySelector(".klausur-passwort");
+        const button = bereich.querySelector(".klausur-button");
+        const fehler = bereich.querySelector(".klausur-fehler");
+
+        if (!eingabe || !button) {
+            return;
+        }
+
+        if (klausurenFreigeschaltet) {
+            zeigeKlausurmaterial(bereich);
+            return;
+        }
+
+        function pruefePasswort() {
+            if (eingabe.value === klausurPasswort) {
+                try {
+                    sessionStorage.setItem(klausurSessionKey, "true");
+                } catch (e) {}
+
+                zeigeKlausurmaterial(bereich);
+            } else {
+                if (fehler) {
+                    fehler.style.display = "block";
+                }
+
+                eingabe.value = "";
+                eingabe.focus();
+            }
+        }
+
+        button.addEventListener("click", pruefePasswort);
+
+        eingabe.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                pruefePasswort();
+            }
+        });
+    });
+    
     // ======================================
     // Startseite – Bild-Karussell
     // ======================================
