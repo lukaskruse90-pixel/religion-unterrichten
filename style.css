@@ -1052,6 +1052,24 @@ html.dark .carousel-hint {
     color: #aaa;
 }
 
+/* ========================================== */
+/* Fixierter Header – Desktop                 */
+/* ========================================== */
+
+@media (min-width: 701px) {
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1001;
+    }
+
+    nav {
+        position: sticky;
+        top: 81px;
+        z-index: 1000;
+    }
+}
 
 /* ========================================== */
 /* Responsive Design                          */
