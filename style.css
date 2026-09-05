@@ -509,6 +509,11 @@ main h1 {
     color: #555;
 }
 
+.klausur-hinweis a,
+.klausur-hinweis a:visited {
+    color: inherit;
+}
+
 .klausur-login {
     display: flex;
     align-items: center;
@@ -847,6 +852,10 @@ footer {
     border-top: 1px solid #e0e0e0;
 }
 
+footer a,
+footer a:visited {
+    color: inherit;
+}
 
 /* ========================================== */
 /* Dark Mode                                  */
