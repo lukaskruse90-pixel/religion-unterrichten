@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ======================================
     
     const klausurBereiche = document.querySelectorAll(".klausuren");
-    const klausurPasswort = "refru";
+    const klausurPasswort = "ref-ru";
     const klausurSessionKey = "klausurenFreigeschaltet";
 
     let klausurenFreigeschaltet = false;
