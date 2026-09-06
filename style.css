@@ -972,6 +972,14 @@ html.dark .intro-text-content p {
     color: #c5c5c5;
 }
 
+html.dark .intro-text-content a {
+    color: #90caf9;
+}
+
+html.dark .intro-text-content a:hover {
+    text-decoration: underline;
+}
+
 html.dark .intro-text-content::after {
     background: linear-gradient(
         to bottom,
