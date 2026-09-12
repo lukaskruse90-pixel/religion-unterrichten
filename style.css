@@ -1089,6 +1089,10 @@ html.dark .carousel-hint {
         top: 88px;
         z-index: 1000;
     }
+
+     .material {
+        scroll-margin-top: 160px;
+    }
 }
 
 /* ========================================== */
