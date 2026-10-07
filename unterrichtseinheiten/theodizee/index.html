@@ -1,1 +1,576 @@
-dd
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theodizee – Unterricht</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Dark Mode möglichst früh setzen, um Flackern zu vermeiden -->
+  <script>
+    (function () {
+      try {
+        var root = document.documentElement;
+        var savedTheme = localStorage.getItem("theme");
+        var systemPrefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (
+          savedTheme === "dark" ||
+          (!savedTheme && systemPrefersDark)
+        ) {
+          root.classList.add("dark");
+        }
+      } catch (e) {
+        // Wenn localStorage blockiert ist, einfach nichts tun
+      }
+    })();
+  </script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- ====================================== -->
+  <!-- Header                                 -->
+  <!-- ====================================== -->
+
+  <header>
+    <a href="/" class="logo">
+      <span class="logo-main">Religionsunterricht</span>
+      <span class="logo-sub">reflexiv</span>
+    </a>
+
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      aria-label="Dark Mode umschalten"
+    >
+      🌙
+    </button>
+  </header>
+
+
+  <!-- ====================================== -->
+  <!-- Navigation                             -->
+  <!-- ====================================== -->
+
+  <nav>
+    <ul>
+
+      <li class="dropdown">
+        <span class="nav-label">Klassenstufe 10</span>
+
+        <ul class="dropdown-menu">
+          <!-- Später: Unterrichtseinheiten zu konkreten Religionen -->
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <span class="nav-label">Klassenstufe 11</span>
+
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/unterrichtseinheiten/funktionalitaet-von-religion/">
+              Funktionalität von Religion
+            </a>
+          </li>
+
+          <li>
+            <a href="/unterrichtseinheiten/religionskritik/">
+              Religionskritik
+            </a>
+          </li>
+
+          <li>
+            <a href="/unterrichtseinheiten/gottesbeweise/">
+              Gottesbeweise
+            </a>
+          </li>
+
+          <li>
+            <a href="/unterrichtseinheiten/theodizee/">
+              Theodizee
+            </a>
+          </li>
+
+          <li>
+            <a href="/unterrichtseinheiten/religionstheologie/">
+              Religionstheologie
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <span class="nav-label">Klassenstufe 12–13</span>
+
+        <ul class="dropdown-menu">
+          <!-- Später: Vertiefungsthemen -->
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+
+
+  <!-- ====================================== -->
+  <!-- Hauptinhalt                            -->
+  <!-- ====================================== -->
+
+  <main>
+
+    <h1>Theodizee</h1>
+
+
+    <!-- Einführung -->
+
+    <div class="intro-text">
+
+      <div class="intro-text-content">
+  <p>
+  Einführungstext: große epistemische Relevanz mit Blick auf Rechtfertigung des Gottesglaubens ...
+  + funktionale Implikationen
+
+</p>
+<p>
+  Die Einheit setzt zunächst...
+</p>
+<p>
+  Darauf aufbauend werden zentrale Theodizeeansätze... Neuinterpretation etc.
+</p>
+<p>
+  Den Abschluss bildet eine produktionsorientierte
+  Doppelstunde, in der ...
+</p>
+      </div>
+
+      <button class="intro-toggle" type="button">
+        Text anzeigen <span>↓</span>
+      </button>
+
+    </div>
+
+
+    <!-- ====================================== -->
+    <!-- Materialsammlung                       -->
+    <!-- ====================================== -->
+
+    <div class="materialsammlung">
+
+      <h2>Materialsammlung</h2>
+
+      <div class="sammlung-links">
+
+        <a
+          href="pdfs/0-theodizee-arbeitsboegen.pdf"
+          class="sammlung-link pdf"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Alle Arbeitsbögen <small>PDF</small></span>
+        </a>
+
+        <a
+          href="docs/0-theodizee-arbeitsboegen.docx"
+          class="sammlung-link doc"
+        >
+          <i class="fa-solid fa-file-word"></i>
+          <span>Alle Arbeitsbögen <small>Word</small></span>
+        </a>
+
+        <a
+          href="ppts/0-theodizee-praesentationen.pptx"
+          class="sammlung-link ppp"
+        >
+          <i class="fa-solid fa-file-powerpoint"></i>
+          <span>Alle Präsentationen <small>PowerPoint</small></span>
+        </a>
+
+      </div>
+
+      <p class="sammlung-hinweis">
+        In der Materialsammlung sind die Arbeitsbögen und Präsentationen gebündelt.
+        Fachwissenschaftliche Orientierung, didaktisch-methodischer Kommentar,
+        Stundenverlauf und Erwartungshorizont finden sich in den
+        Dateien zu den jeweiligen Einzelstunden.
+      </p>
+
+      <p class="sammlung-hinweis">
+        Die interaktiven Textfelder in den PowerPoint-Präsentationen funktionieren
+        nur unter Windows.
+      </p>
+
+    </div>
+
+
+    <!-- ====================================== -->
+    <!-- Einstiegsstunde                       -->
+    <!-- ====================================== -->
+
+    <section class="kategorie">
+
+      <h2>Einstiegsstunde</h2>
+
+      <div class="material" id="was-ist-religion">
+
+        <div class="material-text">
+          <h3>Das Problem des Übels und die Theodizee</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/1-theodizeeproblem.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/1-theodizeeproblem.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/1-theodizeeproblem.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/1-theodizeeproblem.png"
+          alt="Fußball-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- Überblicksstunden                     -->
+    <!-- ====================================== -->
+
+    <section class="kategorie">
+
+      <h2>Theodizeeansätze</h2>
+
+
+      <!-- Interdependenz der Funktionen -->
+
+      <div class="material" id="interdependenz-der-funktionen">
+
+        <div class="material-text">
+          <h3>Neuinterpretation des Übels</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/2-interdependenz-der-funktionen.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/2-interdependenz-der-funktionen.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/2-interdependenz-der-funktionen.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/2-interdependenz-der-funktionen.png"
+          alt="Interdependenz-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+
+      <!-- Perspektiven auf Religion -->
+
+      <div class="material" id="perspektiven-auf-religion">
+
+        <div class="material-text">
+          <h3>Willensfreiheitsargument</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/3-perspektiven-auf-religion.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/3-perspektiven-auf-religion.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/3-perspektiven-auf-religion.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/3-perspektiven-auf-religion.png"
+          alt="Perspektiven-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+
+      <!-- Ricœur -->
+
+      <div class="material" id="ricoeur-selbstverstaendnis">
+
+        <div class="material-text">
+          <h3>Naturgesetzlichkeitsargument</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/4-ricoeur-selbstverstaendnis.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/4-ricoeur-selbstverstaendnis.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/4-ricoeur-selbstverstaendnis.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/4-ricoeur-selbstverstaendnis.png"
+          alt="Selbstverständnis-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+
+      <!-- Drewermann -->
+
+      <div class="material" id="drewermann-individuation">
+
+        <div class="material-text">
+          <h3>Modifikation der Gotteseigenschaften</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/5-drewermann-individuation.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/5-drewermann-individuation.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/5-drewermann-individuation.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/5-drewermann-individuation.png"
+          alt="Individuation-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+
+      <!-- Habermas -->
+
+      <div class="material" id="habermas-semantisches-potenzial">
+
+        <div class="material-text">
+          <h3>Skeptischer Theismus</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/6-habermas-semantisches-potenzial.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/6-habermas-semantisches-potenzial.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/6-habermas-semantisches-potenzial.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/6-habermas-semantisches-potenzial.png"
+          alt="Gesellschaft-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================== -->
+    <!-- Abschlussstunde                       -->
+    <!-- ====================================== -->
+
+    <section class="kategorie">
+
+      <h2>Abschlussstunde</h2>
+
+      <div class="material" id="abschluss-funktionalitaet">
+
+        <div class="material-text">
+          <h3>Theodizee - Kreativ</h3>
+
+          <p>
+            ...
+          </p>
+
+          <div class="material-links">
+            <a href="pdfs/7-abschluss-funktionalitaet.pdf" class="pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+
+            <a href="docs/7-abschluss-funktionalitaet.docx" class="doc">
+              <i class="fa-solid fa-file-word"></i>
+            </a>
+
+            <a href="ppts/7-abschluss-funktionalitaet.pptx" class="ppp">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </a>
+          </div>
+        </div>
+
+        <img
+          src="bilder/7-abschluss-funktionalitaet.png"
+          alt="Funktionalität-Kreativ-Illustration"
+          class="preview"
+        >
+
+      </div>
+
+<section class="kategorie klausuren">
+    <h2>Klausuren</h2>
+
+    <div class="klausur-zugang">
+
+        <p class="klausur-hinweis">
+            Das Passwort für die Klausurmaterialien kann von Lehrkräften unter
+            ...@...
+            erfragt werden.
+        </p>
+
+        <div class="klausur-login">
+            <input
+                type="password"
+                class="klausur-passwort"
+                placeholder="Passwort"
+                autocomplete="off"
+                aria-label="Passwort für Klausurmaterialien"
+            >
+
+            <button type="button" class="klausur-button">
+                Freischalten
+            </button>
+        </div>
+
+        <p class="klausur-fehler">
+            Passwort nicht korrekt.
+        </p>
+
+        <div class="klausur-material">
+
+            <div class="material-links">
+                <a
+                    href="pdfs/8-klausuren-funktionalitaet.pdf"
+                    class="icon-button pdf"
+                    target="_blank"
+                    rel="noopener"
+                    title="PDF öffnen"
+                >
+                    <i class="fa-solid fa-file-pdf"></i>
+                </a>
+
+                <a
+                    href="docs/8-klausuren-funktionalitaet.docx"
+                    class="icon-button doc"
+                    download
+                    title="Word-Datei herunterladen"
+                >
+                    <i class="fa-solid fa-file-word"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    
+  </main>
+
+
+  <!-- ====================================== -->
+  <!-- Footer                                 -->
+  <!-- ====================================== -->
+
+<footer>
+    &copy; 2026 Religionsunterricht ·
+    <a href="/impressum/">Impressum</a>
+</footer>
+
+
+  <!-- ====================================== -->
+  <!-- Modal für vergrößerte Bildansicht      -->
+  <!-- ====================================== -->
+
+  <div id="imgModal" class="img-modal">
+    <span class="close">&times;</span>
+    <img
+      class="img-modal-content"
+      id="imgModalImg"
+      alt=""
+    >
+  </div>
+
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
