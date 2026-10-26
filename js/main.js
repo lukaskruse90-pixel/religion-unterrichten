@@ -212,5 +212,76 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+// ======================================
+// Karussell der Unterrichtseinheiten
+// ======================================
 
+const carouselTrack = document.querySelector(
+    ".units-carousel-track"
+);
+
+const carouselCards = document.querySelectorAll(
+    ".units-carousel-track > .unit-card"
+);
+
+const carouselPrev = document.querySelector(
+    ".units-carousel-prev"
+);
+
+const carouselNext = document.querySelector(
+    ".units-carousel-next"
+);
+
+const carouselDots = document.querySelectorAll(
+    ".units-carousel-dots button"
+);
+
+if (carouselTrack && carouselCards.length > 0) {
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+
+        currentSlide =
+            (index + carouselCards.length) % carouselCards.length;
+
+        carouselTrack.style.transform =
+            `translateX(-${currentSlide * 100}%)`;
+
+        carouselDots.forEach((dot, i) => {
+            dot.classList.toggle(
+                "active",
+                i === currentSlide
+            );
+            dot.setAttribute(
+                "aria-current",
+                i === currentSlide ? "true" : "false"
+            );
+        });
+
+        carouselCards.forEach((card, i) => {
+            card.inert = i !== currentSlide;
+            card.setAttribute(
+                "aria-hidden",
+                i !== currentSlide ? "true" : "false"
+            );
+        });
+    }
+
+    carouselPrev?.addEventListener("click", () => {
+        showSlide(currentSlide - 1);
+    });
+
+    carouselNext?.addEventListener("click", () => {
+        showSlide(currentSlide + 1);
+    });
+
+    carouselDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            showSlide(index);
+        });
+    });
+
+    showSlide(0);
+}
 });
