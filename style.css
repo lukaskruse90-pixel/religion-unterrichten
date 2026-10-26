@@ -834,6 +834,42 @@ main h1 {
    Karussell der Unterrichtseinheiten
    ====================================== */
 
+/* Karussell: Pfeile links und rechts neben der Karte */
+
+.units-carousel-layout {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    align-items: center;
+    gap: 12px;
+    width: calc(100% + 88px);
+    margin-left: -44px;
+}
+
+.units-carousel-layout > .units-carousel-prev {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.units-carousel-layout > .units-carousel {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.units-carousel-layout > .units-carousel-next {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+@media (max-width: 600px) {
+    .units-carousel-layout {
+        width: 100%;
+        margin-left: 0;
+        grid-template-columns: 24px minmax(0, 1fr) 24px;
+        gap: 6px;
+    }
+}
+
 .units-carousel {
     overflow: hidden;
     border-radius: 12px;
