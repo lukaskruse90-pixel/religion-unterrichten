@@ -247,7 +247,10 @@ if (carouselTrack && carouselCards.length > 0) {
 
         carouselTrack.style.transform =
             `translateX(-${currentSlide * 100}%)`;
+        const activeCard = carouselCards[currentSlide];
 
+        carouselTrack.parentElement.style.height =
+            `${activeCard.offsetHeight}px`;
         carouselDots.forEach((dot, i) => {
             dot.classList.toggle(
                 "active",
@@ -283,5 +286,18 @@ if (carouselTrack && carouselCards.length > 0) {
     });
 
     showSlide(0);
+        window.addEventListener("resize", () => {
+        showSlide(currentSlide);
+    });
+
+    carouselCards.forEach((card) => {
+        const image = card.querySelector("img");
+
+        if (image && !image.complete) {
+            image.addEventListener("load", () => {
+                showSlide(currentSlide);
+            });
+        }
+    });
 }
 });
