@@ -752,10 +752,12 @@ main h1 {
 
 .unit-card-image {
     display: block;
-    width: 100%;
+    width: calc(100% - 32px);
     height: 160px;
+    margin: 16px 16px 0;
     object-fit: cover;
     object-position: center;
+    border-radius: 8px;
 }
 
 .unit-card-header {
