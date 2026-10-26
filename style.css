@@ -834,13 +834,13 @@ main h1 {
    Karussell der Unterrichtseinheiten
    ====================================== */
 
-/* Karussell: Pfeile links und rechts neben der Karte */
+/* Karte mit seitlichen Pfeilen */
 
 .units-carousel-layout {
     display: grid;
     grid-template-columns: 32px minmax(0, 1fr) 32px;
     align-items: center;
-    gap: 12px;
+    column-gap: 12px;
     width: calc(100% + 88px);
     margin-left: -44px;
 }
@@ -861,14 +861,7 @@ main h1 {
     grid-row: 1;
 }
 
-@media (max-width: 600px) {
-    .units-carousel-layout {
-        width: 100%;
-        margin-left: 0;
-        grid-template-columns: 24px minmax(0, 1fr) 24px;
-        gap: 6px;
-    }
-}
+/* Karussell */
 
 .units-carousel {
     overflow: hidden;
@@ -886,24 +879,21 @@ main h1 {
     min-width: 0;
 }
 
-/* Navigation */
-
-.units-carousel-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
-    margin-top: 20px;
-}
+/* Pfeile */
 
 .units-carousel-prev,
 .units-carousel-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 40px;
+    padding: 0;
     border: none;
     background: transparent;
-    color: #777;
-    font-size: 1.15rem;
+    color: #888;
+    font-size: 1.2rem;
     cursor: pointer;
-    padding: 6px 10px;
     transition: color 0.2s ease;
 }
 
@@ -913,6 +903,13 @@ main h1 {
 }
 
 /* Navigationspunkte */
+
+.units-carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+}
 
 .units-carousel-dots {
     display: flex;
@@ -954,6 +951,24 @@ main h1 {
 .dark .units-carousel-dots button.active {
     background: #ddd;
 }
+
+/* Mobil */
+
+@media (max-width: 600px) {
+    .units-carousel-layout {
+        width: 100%;
+        margin-left: 0;
+        grid-template-columns: 24px minmax(0, 1fr) 24px;
+        column-gap: 6px;
+    }
+
+    .units-carousel-prev,
+    .units-carousel-next {
+        width: 24px;
+    }
+}
+
+/* Reduzierte Animation */
 
 @media (prefers-reduced-motion: reduce) {
     .units-carousel-track {
