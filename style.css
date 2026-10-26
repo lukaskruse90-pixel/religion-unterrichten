@@ -743,15 +743,23 @@ main h1 {
 }
 
 .unit-card {
-    padding: 24px;
+    overflow: hidden;
 
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.unit-card-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .unit-card-header {
-    padding-bottom: 16px;
+    padding: 24px 24px 16px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -778,7 +786,7 @@ main h1 {
 }
 
 .unit-lessons {
-    margin: 20px 0 0;
+    margin: 20px 24px 24px;
     padding-left: 24px;
 }
 
