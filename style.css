@@ -830,6 +830,100 @@ main h1 {
     outline-offset: 3px;
 }
 
+/* ======================================
+   Karussell der Unterrichtseinheiten
+   ====================================== */
+
+.units-carousel {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.units-carousel-track {
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.4s ease;
+}
+
+.units-carousel-track > .unit-card {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+/* Navigation */
+
+.units-carousel-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.units-carousel-prev,
+.units-carousel-next {
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 1.15rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    transition: color 0.2s ease;
+}
+
+.units-carousel-prev:hover,
+.units-carousel-next:hover {
+    color: #222;
+}
+
+/* Navigationspunkte */
+
+.units-carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.units-carousel-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.units-carousel-dots button.active {
+    background: #555;
+}
+
+/* Dark Mode */
+
+.dark .units-carousel-prev,
+.dark .units-carousel-next {
+    color: #aaa;
+}
+
+.dark .units-carousel-prev:hover,
+.dark .units-carousel-next:hover {
+    color: #fff;
+}
+
+.dark .units-carousel-dots button {
+    background: #555;
+}
+
+.dark .units-carousel-dots button.active {
+    background: #ddd;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .units-carousel-track {
+        transition: none;
+    }
+}
 
 /* ========================================== */
 /* Unterrichtseinheiten – Dark Mode           */
