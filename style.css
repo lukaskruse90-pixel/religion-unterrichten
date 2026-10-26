@@ -147,6 +147,42 @@ nav ul li.dropdown .dropdown-menu li a:hover {
 }
 
 
+/* ======================================
+   Navigation – Kompetenzbereiche SH
+   ====================================== */
+
+@media (min-width: 701px) {
+
+    .main-navigation > ul {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .main-navigation > ul > .dropdown {
+        min-width: 0;
+        position: relative;
+    }
+
+    .main-navigation .nav-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 76px;
+        padding: 12px;
+        text-align: center;
+        line-height: 1.45;
+        white-space: normal;
+    }
+
+    .main-navigation .dropdown-menu {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
 /* ========================================== */
 /* Hauptbereich                               */
 /* ========================================== */
