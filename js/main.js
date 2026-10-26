@@ -229,18 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let currentSlide = 0;
 
-        // Fisher-Yates-Shuffle:
-        // erzeugt bei jedem Seitenaufruf eine zufällige Reihenfolge
-        for (let i = slides.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-
-            [slides[i], slides[j]] = [slides[j], slides[i]];
-        }
-
-        // Gemischte Reihenfolge ins DOM übernehmen
-        slides.forEach((slide) => {
-            carouselTrack.appendChild(slide);
-        });
 
         function showSlide(index) {
 
