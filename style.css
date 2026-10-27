@@ -1046,11 +1046,35 @@ html.dark .unit-lessons li span {
     }
 
     .unit-card {
-        padding: 20px;
+        padding: 0;
+    }
+
+    .unit-card-image {
+        width: calc(100% - 24px);
+        height: 120px;
+        margin: 12px 12px 0;
+    }
+
+    .unit-card-header {
+        padding: 18px 18px 14px;
+    }
+
+    .unit-card-header::after {
+        left: 18px;
+        right: 18px;
     }
 
     .unit-card-header h2 {
         font-size: 1.1rem;
+    }
+
+    .unit-lessons {
+        margin: 16px 18px 20px;
+        padding-left: 20px;
+    }
+
+    .unit-lessons li {
+        margin-bottom: 14px;
     }
 }
 
