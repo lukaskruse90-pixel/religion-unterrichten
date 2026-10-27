@@ -1292,11 +1292,13 @@ html.dark .klausur-fehler {
         margin-right: 0;
     }
 
-    .material img.preview {
-        max-width: 100%;
-        margin-top: 20px;
-    }
-
+.material img.preview {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-top: 20px;
+}
 
     /* Startseiten-Informationsbereich */
 
