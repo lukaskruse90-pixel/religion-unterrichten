@@ -760,7 +760,7 @@ main h1 {
 
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .unit-card-image {
@@ -809,6 +809,14 @@ main h1 {
 
     color: #777;
     font-size: 0.85rem;
+}
+
+.unit-card {
+    transition: box-shadow 0.2s ease;
+}
+
+.unit-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
 }
 
 .unit-lessons {
