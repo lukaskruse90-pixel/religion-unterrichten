@@ -414,3 +414,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Ankersprung nach dem ersten Laden korrigieren
+window.addEventListener("load", () => {
+  if (!window.location.hash) return;
+
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  const target = document.getElementById(id);
+
+  if (target) {
+    target.scrollIntoView({
+      behavior: "instant",
+      block: "start"
+    });
+  }
+});
