@@ -1,6 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.documentElement;
-
 
     // ======================================
     // Bild-Modal
@@ -25,17 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Modal über das X schließen
         closeBtn.addEventListener("click", closeModal);
 
-        // Modal durch Klick auf den Hintergrund schließen
         modal.addEventListener("click", (event) => {
             if (event.target === modal) {
                 closeModal();
             }
         });
 
-        // Modal mit Escape schließen
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") {
                 closeModal();
@@ -55,29 +52,41 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
         savedTheme = localStorage.getItem("theme");
     } catch (e) {
-        // Wenn localStorage blockiert ist, einfach ignorieren
+        // Falls localStorage nicht verfügbar ist
     }
 
-    const systemPrefersDark =
+    const systemPrefersDark = Boolean(
         window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
 
-    // Initiales Theme setzen, falls noch keine Dark-Mode-Klasse vorhanden ist
-    if (
-        !root.classList.contains("dark") &&
-        (
-            savedTheme === "dark" ||
-            (!savedTheme && systemPrefersDark)
-        )
-    ) {
+    // Gespeicherte Einstellung hat Vorrang
+    if (savedTheme === "dark") {
         root.classList.add("dark");
+    } else if (savedTheme === "light") {
+        root.classList.remove("dark");
+    } else {
+        root.classList.toggle("dark", systemPrefersDark);
     }
 
     function updateToggleIcon() {
         if (!toggleBtn) return;
 
         const isDark = root.classList.contains("dark");
+
         toggleBtn.textContent = isDark ? "☀️" : "🌙";
+
+        toggleBtn.setAttribute(
+            "aria-label",
+            isDark
+                ? "Light Mode aktivieren"
+                : "Dark Mode aktivieren"
+        );
+
+        toggleBtn.setAttribute(
+            "aria-pressed",
+            String(isDark)
+        );
     }
 
     updateToggleIcon();
@@ -92,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     isDark ? "dark" : "light"
                 );
             } catch (e) {
-                // Wenn localStorage blockiert ist, einfach ignorieren
+                // Falls localStorage nicht verfügbar ist
             }
 
             updateToggleIcon();
@@ -108,12 +117,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const introToggle = document.querySelector(".intro-toggle");
 
     if (introText && introToggle) {
-        introToggle.addEventListener("click", () => {
-            const isOpen = introText.classList.toggle("open");
 
+        function updateIntroToggle(isOpen) {
             introToggle.innerHTML = isOpen
                 ? 'Text ausblenden <span>↑</span>'
                 : 'Text anzeigen <span>↓</span>';
+
+            introToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+        }
+
+        updateIntroToggle(
+            introText.classList.contains("open")
+        );
+
+        introToggle.addEventListener("click", () => {
+            const isOpen = introText.classList.toggle("open");
+            updateIntroToggle(isOpen);
         });
     }
 
@@ -128,22 +150,65 @@ document.addEventListener("DOMContentLoaded", () => {
         const label = dropdown.querySelector(".nav-label");
         const menu = dropdown.querySelector(".dropdown-menu");
 
-        // Leere Dropdowns wie Klassenstufe 10 oder 12–13 ignorieren
+        // Leere Dropdowns wie
+        // „Anthropologie & Ethik“ ignorieren
         if (!label || !menu || menu.children.length === 0) {
             return;
         }
 
-        label.addEventListener("click", () => {
-            if (window.innerWidth <= 700) {
-                dropdown.classList.toggle("open");
+        // Die vorhandenen span-Elemente auf
+        // Mobilgeräten per Tastatur bedienbar machen
+        label.setAttribute("role", "button");
+        label.setAttribute("tabindex", "0");
+        label.setAttribute("aria-expanded", "false");
+
+        function toggleDropdown() {
+            if (window.innerWidth > 700) {
+                return;
+            }
+
+            const isOpen = dropdown.classList.toggle("open");
+
+            label.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+        }
+
+        label.addEventListener("click", toggleDropdown);
+
+        label.addEventListener("keydown", (event) => {
+            if (
+                window.innerWidth <= 700 &&
+                (event.key === "Enter" || event.key === " ")
+            ) {
+                event.preventDefault();
+                toggleDropdown();
             }
         });
     });
 
+    // Geöffnete mobile Dropdowns beim Wechsel
+    // zur Desktopansicht zurücksetzen
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 700) {
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("open");
+
+                const label = dropdown.querySelector(".nav-label");
+
+                if (label && label.hasAttribute("aria-expanded")) {
+                    label.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
+    });
+
+
     // ======================================
     // Klausuren – Passwortschutz
     // ======================================
-    
+
     const klausurBereiche = document.querySelectorAll(".klausuren");
     const klausurPasswort = "ref-ru";
     const klausurSessionKey = "klausurenFreigeschaltet";
@@ -153,7 +218,9 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
         klausurenFreigeschaltet =
             sessionStorage.getItem(klausurSessionKey) === "true";
-    } catch (e) {}
+    } catch (e) {
+        // Falls sessionStorage nicht verfügbar ist
+    }
 
     function zeigeKlausurmaterial(bereich) {
         const login = bereich.querySelector(".klausur-login");
@@ -189,11 +256,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function pruefePasswort() {
             if (eingabe.value === klausurPasswort) {
-                try {
-                    sessionStorage.setItem(klausurSessionKey, "true");
-                } catch (e) {}
+                klausurenFreigeschaltet = true;
 
-                zeigeKlausurmaterial(bereich);
+                try {
+                    sessionStorage.setItem(
+                        klausurSessionKey,
+                        "true"
+                    );
+                } catch (e) {
+                    // Falls sessionStorage nicht verfügbar ist
+                }
+
+                klausurBereiche.forEach(zeigeKlausurmaterial);
             } else {
                 if (fehler) {
                     fehler.style.display = "block";
@@ -208,96 +282,135 @@ document.addEventListener("DOMContentLoaded", () => {
 
         eingabe.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
+                event.preventDefault();
                 pruefePasswort();
             }
         });
     });
-// ======================================
-// Karussell der Unterrichtseinheiten
-// ======================================
 
-const carouselTrack = document.querySelector(
-    ".units-carousel-track"
-);
 
-const carouselCards = document.querySelectorAll(
-    ".units-carousel-track > .unit-card"
-);
+    // ======================================
+    // Karussell der Unterrichtseinheiten
+    // ======================================
 
-const carouselPrev = document.querySelector(
-    ".units-carousel-prev"
-);
+    const carouselTrack = document.querySelector(
+        ".units-carousel-track"
+    );
 
-const carouselNext = document.querySelector(
-    ".units-carousel-next"
-);
+    const carouselCards = document.querySelectorAll(
+        ".units-carousel-track > .unit-card"
+    );
 
-const carouselDots = document.querySelectorAll(
-    ".units-carousel-dots button"
-);
+    const carouselPrev = document.querySelector(
+        ".units-carousel-prev"
+    );
 
-if (carouselTrack && carouselCards.length > 0) {
+    const carouselNext = document.querySelector(
+        ".units-carousel-next"
+    );
 
-    let currentSlide = 0;
+    const carouselDots = document.querySelectorAll(
+        ".units-carousel-dots button"
+    );
 
-    function showSlide(index) {
+    if (carouselTrack && carouselCards.length > 0) {
 
-        currentSlide =
-            (index + carouselCards.length) % carouselCards.length;
+        let currentSlide = 0;
 
-        carouselTrack.style.transform =
-            `translateX(-${currentSlide * 100}%)`;
-        const activeCard = carouselCards[currentSlide];
+        const carouselViewport = carouselTrack.parentElement;
 
-        carouselTrack.parentElement.style.height =
-            `${activeCard.offsetHeight}px`;
-        carouselDots.forEach((dot, i) => {
-            dot.classList.toggle(
-                "active",
-                i === currentSlide
-            );
-            dot.setAttribute(
-                "aria-current",
-                i === currentSlide ? "true" : "false"
-            );
-        });
+        function updateCarouselHeight() {
+            if (!carouselViewport) return;
 
-        carouselCards.forEach((card, i) => {
-            card.inert = i !== currentSlide;
-            card.setAttribute(
-                "aria-hidden",
-                i !== currentSlide ? "true" : "false"
-            );
-        });
-    }
+            const activeCard = carouselCards[currentSlide];
 
-    carouselPrev?.addEventListener("click", () => {
-        showSlide(currentSlide - 1);
-    });
+            carouselViewport.style.height =
+                `${activeCard.offsetHeight}px`;
+        }
 
-    carouselNext?.addEventListener("click", () => {
-        showSlide(currentSlide + 1);
-    });
+        function showSlide(index) {
+            currentSlide =
+                (index + carouselCards.length) %
+                carouselCards.length;
 
-    carouselDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-            showSlide(index);
-        });
-    });
+            carouselTrack.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
 
-    showSlide(0);
-        window.addEventListener("resize", () => {
-        showSlide(currentSlide);
-    });
+            carouselDots.forEach((dot, i) => {
+                const isActive = i === currentSlide;
 
-    carouselCards.forEach((card) => {
-        const image = card.querySelector("img");
+                dot.classList.toggle("active", isActive);
 
-        if (image && !image.complete) {
-            image.addEventListener("load", () => {
-                showSlide(currentSlide);
+                if (isActive) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+            });
+
+            carouselCards.forEach((card, i) => {
+                const isInactive = i !== currentSlide;
+
+                card.inert = isInactive;
+
+                card.setAttribute(
+                    "aria-hidden",
+                    String(isInactive)
+                );
+            });
+
+            updateCarouselHeight();
+        }
+
+        if (carouselPrev) {
+            carouselPrev.addEventListener("click", () => {
+                showSlide(currentSlide - 1);
             });
         }
-    });
-}
+
+        if (carouselNext) {
+            carouselNext.addEventListener("click", () => {
+                showSlide(currentSlide + 1);
+            });
+        }
+
+        carouselDots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                showSlide(index);
+            });
+        });
+
+        // Ausgangszustand herstellen
+        showSlide(0);
+
+        // Höhe bei Fenstergrößenänderung aktualisieren
+        window.addEventListener(
+            "resize",
+            updateCarouselHeight
+        );
+
+        // Höhe bei nachträglichen Größenänderungen
+        // der aktiven Karte aktualisieren
+        if ("ResizeObserver" in window) {
+            const resizeObserver = new ResizeObserver(() => {
+                updateCarouselHeight();
+            });
+
+            carouselCards.forEach((card) => {
+                resizeObserver.observe(card);
+            });
+        }
+
+        // Höhe nach dem Laden der Bilder aktualisieren
+        carouselCards.forEach((card) => {
+            const image = card.querySelector("img");
+
+            if (image && !image.complete) {
+                image.addEventListener(
+                    "load",
+                    updateCarouselHeight
+                );
+            }
+        });
+    }
 });
