@@ -727,10 +727,10 @@ main h1 {
 
 .start-intro p {
     max-width: 1400px;
-    margin: 0 auto 10px;
+    margin: 0 auto;
 
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     line-height: 1.6;
     text-align: center;
 }
