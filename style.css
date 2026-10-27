@@ -735,29 +735,6 @@ main h1 {
     text-align: center;
 }
 
-.start-intro ul {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 20px;
-
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.start-intro li {
-    margin-bottom: 3px;
-}
-
-.start-intro li:last-child {
-    margin-bottom: 0;
-}
-
-.start-intro strong {
-    color: #444;
-    font-weight: 600;
-}
-
 .start-intro a {
     color: #1a73e8;
     font-weight: 500;
